@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "code": "BFSBICC",
+    "title": "Black Friday Holiday Sale",
+    "offerText": "Up to 25% off on Domestic Flights",
+    "description": "With SBI Credit Cards",
+    "bgImage": "/assets/offers/sbi_domestic.jpg",
+    "bankLogo": "/assets/banks/sbi.png",
+    "emiText": "Up to 25% Instant discount on Credit Card & EMI Transactions"
+  },
+  {
+    "id": 2,
+    "code": "BFSBICC",
+    "title": "Black Friday Holiday Sale",
+    "offerText": "Up to 15% off on International Flights",
+    "description": "With SBI Credit Cards",
+    "bgImage": "/assets/offers/sbi_international.jpg",
+    "bankLogo": "/assets/banks/sbi.png",
+    "emiText": "Up to 25% Instant discount on Credit Card & EMI Transactions"
+  },
+  {
+    "id": 3,
+    "code": "CANARACC",
+    "title": "Flight Offer",
+    "offerText": "Up to 15% off on Flights",
+    "description": "Offer applicable with Canara Bank Credit Cards & EMI Transactions",
+    "bgImage": "/assets/offers/canara_flight.jpg",
+    "bankLogo": "/assets/banks/canara.png",
+    "emiText": "Credit Card & EMI Offer"
+  },
+  {
+    "id": 4,
+    "code": "HDFCEMI",
+    "title": "EMI Special Offer",
+    "offerText": "Up to ₹5000 off on Flights",
+    "description": "With HDFC Bank Credit Card EMIs",
+    "bgImage": "/assets/offers/hdfc_flight.jpg",
+    "bankLogo": "/assets/banks/hdfc.png",
+    "emiText": "No Cost EMI Available"
+  },
+  {
+    "id": 5,
+    "code": "CTFKAXIS | CTFKSBI",
+    "title": "Combo Bank Offer",
+    "offerText": "Flat 10% off + 5% cashback",
+    "description": "With Flipkart Axis & SBI Credit Cards",
+    "bgImage": "/assets/offers/axis_sbi.jpg",
+    "bankLogo": "/assets/banks/axis_sbi.png",
+    "emiText": "Both Credit Cards Applicable"
+  },
+  {
+    "id": 6,
+    "code": "CTUPI",
+    "title": "UPI Special",
+    "offerText": "Up to ₹5000 off on Flights",
+    "description": "With UPI Payments",
+    "bgImage": "/assets/offers/upi_flight.jpg",
+    "bankLogo": "/assets/banks/upi.png",
+    "emiText": "Pay via UPI & Save"
+  },
+  {
+    "id": 7,
+    "code": "CTFIRST",
+    "title": "First Booking Offer",
+    "offerText": "Flat 15% off",
+    "description": "On your First Domestic Flight Booking",
+    "bgImage": "/assets/offers/first_booking.jpg",
+    "bankLogo": "/assets/banks/default.png",
+    "emiText": "First Time User Offer"
+  },
+  {
+    "id": 8,
+    "code": "CTMHSP",
+    "title": "Malaysia Airlines Special",
+    "offerText": "Up to ₹10,000 off on Flights",
+    "description": "International Travel Special",
+    "bgImage": "/assets/offers/malaysia_airlines.jpg",
+    "bankLogo": "/assets/banks/malaysia.png",
+    "emiText": "Limited Time Offer"
+  }
+]
