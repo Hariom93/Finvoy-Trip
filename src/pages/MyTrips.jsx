@@ -7,8 +7,7 @@ export default function MyTrips() {
   const menuItems = [
     { title: "Active", icon: "💳", path: "/active" },
     { title: "Flight", icon: "✈️", path: "/flight" },
-    { title: "Hotel", icon: "🏨", path: "/hotel" },
-    { title: "Bus", icon: "🚌", path: "/bus" },
+   
   ];
 
   return (
@@ -21,7 +20,7 @@ export default function MyTrips() {
         {menuItems.map((item, index) => (
           <div
             key={index}
-            onClick={() => navigate(item.path)}
+            // onClick={() => navigate(item.path)}
             className="flex flex-col items-center cursor-pointer"
           >
             <div

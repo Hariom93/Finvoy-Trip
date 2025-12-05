@@ -9,25 +9,25 @@ export default function Offers() {
 
   const offers = [
     {
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      img: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&q=60&w=800",
       title: "Get 12% off on Flights",
       code: "CTFKAXIS",
       tab: "Flights",
     },
     {
-      img: "https://images.unsplash.com/photo-1542370285-9c57136c87df?w=800",
+      img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&q=60&w=800",
       title: "Unlimited* Flat 12% off",
       code: "CTFKSBIC",
       tab: "Flights",
     },
     {
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&q=60&w=800",
       title: "Up to ₹5,000 off on Flights",
       code: "CTUPI",
       tab: "Flights",
     },
     {
-      img: "https://images.unsplash.com/photo-1490130728028-daaa15f59ea9?w=800",
+      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&q=60&w=800",
       title: "Up to ₹5,000 off on Flights",
       code: "HDFCEMI",
       tab: "Flights",
