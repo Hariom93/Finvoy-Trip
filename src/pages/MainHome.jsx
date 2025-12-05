@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect} from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import logo from "../assets/logo.jpeg";
 import coinLogo from "../assets/supercoins-chip-icon.webp";
 import Img1 from "../assets/Img1.jpg";
@@ -19,6 +20,7 @@ import airasia from "../assets/AirAsiaLogo.webp";
 import vietjet from "../assets/VietjetthaiLogo.webp";
 import spicejet from "../assets/SpicejetLogo.webp";
 import akasa from "../assets/AkasaLogo.jpg";
+
 
 import GatwayImg1 from "../assets/GatwayImg.jpg";
 import GatwayImg2 from "../assets/GatwayImg2.jpg";
@@ -79,7 +81,7 @@ export default function MainHome() {
             <XMarkIcon className="h-5 w-5" />
           </button>
 
-          <h2 className="text-gray-800 font-semibold text-lg mb-1">
+          <h2 className="text-gray-800 font-semibold text-lg">
             Welcome to Cleartrip
           </h2>
           <p className="text-gray-600 text-sm">
@@ -89,15 +91,15 @@ export default function MainHome() {
       )}
 
       {/* Travel Boxes */}
-      <div className="flex flex-wrap gap-4 p-4 mt-2 justify-center">
+      <div className="flex flex-wrap gap-4 p-4 justify-center">
         <div className="border border-gray-300 flex flex-col items-center justify-center w-36 h-36 bg-white rounded-xl shadow-md p-4">
-          <img src={Img1} alt="Flights" className="w-12 h-12 mb-2" />
+          <img src={Img1} alt="Flights" className="w-12 h-12 mb-2 rounded-full" />
           <h3 className="text-lg font-semibold">Flights</h3>
           <p className="text-gray-400 text-sm mt-1">Up to 25% off</p>
         </div>
 
         <div className="border border-gray-300 flex flex-col items-center justify-center w-36 h-36 bg-white rounded-xl shadow-md p-4">
-          <img src={Img2} alt="Holidays" className="w-12 h-12 mb-2" />
+          <img src={Img2} alt="Holidays" className="w-12 h-12 mb-2 rounded-full" />
           <h3 className="text-lg font-semibold">Holidays</h3>
           <p className="text-gray-400 text-sm mt-1">Plan your trip</p>
         </div>
@@ -188,6 +190,52 @@ export default function MainHome() {
     <h1 className="mt-4 font-semibold text-xl">About Finvoytrip</h1>
     <p className="mt-2 text-gray-500 text-sm"> Launched in July 2006, <strong>Cleartrip Pvt Ltd</strong>., a Flipkart company, has emerged as India’s fastest-growing online travel technology company. In April 2021, Flipkart acquired a majority stake in Cleartrip. Cleartrip recently emerged as the no. 2 OTA player as per a study by VIDEC. With an aggressive plan to emerge as a leading innovator in the industry, Cleartrip is on its way to</p>
      </div>
+      <footer className="w-full bg-white  text-sm px-4 py-6 mb-5">
+
+      {/* Top Links */}
+      <div className=" text-blue-600 font-medium flex flex-wrap gap-x-4 mx-2">
+        <p>About Us</p>
+        <p>Careers</p>
+        <p>FAQs</p>
+        <p>Support</p>
+        <p>Collections</p>
+        <p>Cleartrip for Business</p>
+        <p>Gift cards</p>
+        <p>Referral Program</p>
+      </div>
+
+      {/* Divider */}
+      <div className="w-full h-[1px] bg-gray-200 my-4"></div>
+
+      {/* Copyright */}
+      <p className="text-gray-700 text-xs mb-3">
+        © 2006–2025 Cleartrip Pvt. Ltd.
+      </p>
+
+      {/* Bottom Row */}
+      <div className="flex items-center justify-between flex-wrap gap-2">
+
+        {/* Left Links */}
+        <div className="flex gap-4 text-gray-700 text-xs">
+          <p>Privacy</p>
+          <p>Security</p>
+          <p>Terms of Use</p>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex gap-3 text-gray-500 text-lg">
+          <FaFacebookF />
+          <FaInstagram />
+          <FaTwitter />
+          <FaLinkedinIn />
+        </div>
+      </div>
+
+      {/* Last Line */}
+      <p className="text-gray-700 text-xs mt-3">
+        Covid-19 lockdown refund procedure
+      </p>
+    </footer>
     </>
   );
 }

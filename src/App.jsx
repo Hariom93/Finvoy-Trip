@@ -9,7 +9,7 @@ function App() {
     <>
      <Allroutes/>
     </>
-  )
+  );
 }
 
 export default App
