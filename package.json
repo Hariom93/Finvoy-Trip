@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "expo": "^54.0.26",
+    "framer-motion": "^12.23.25",
     "react": "^19.2.1",
     "react-datepicker": "^8.10.0",
     "react-dom": "^19.2.1",
