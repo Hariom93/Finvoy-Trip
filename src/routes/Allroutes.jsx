@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
@@ -40,3 +41,16 @@ const Allroutes = () => {
 };
 
 export default Allroutes;
+=======
+import React from 'react'
+import MainHome from '../pages/MainHome'
+const Allroutes = () => {
+  return (
+    <div>
+      <MainHome/>
+    </div>
+  )
+}
+
+export default Allroutes
+>>>>>>> 1a3bda5 (pulling)
