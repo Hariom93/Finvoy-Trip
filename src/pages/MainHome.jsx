@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import packages from "../Data/packagesData";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import logo from "../assets/logo.jpeg";
+import logo from "../assets/logo.png";
 import coinLogo from "../assets/supercoins-chip-icon.webp";
 import Img1 from "../assets/Img1.jpg";
 import Img2 from "../assets/Img2.webp";
@@ -141,7 +141,7 @@ export default function MainHome() {
           {images.map((item, index) => (
             <div
               key={index}
-              className="relative w-full flex-shrink-0 cursor-pointer"
+              className="relative w-full flex-shrink-0 cursor-pointer "
               onClick={() => navigate(item.link)}
             >
               <img src={item.img} alt={item.label} className="w-full h-[180px] object-cover flex-shrink-0 select-none rounded-xl" />

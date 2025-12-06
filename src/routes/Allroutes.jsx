@@ -3,8 +3,6 @@ import React from 'react';
 import MainHome from '../pages/MainHome';
 import MyTrips from "../pages/MyTrips";
 import Offers from "../pages/Offers";
-import FlightDetails from "../pages/FlightDetails";
-import HolidayDetails from "../pages/HolidayDetails";
 import PackagePage from "../pages/PackagePage";
 import Account from "../pages/Account";
 import Work from "../pages/Work";
@@ -14,6 +12,8 @@ import WesternAmericaPage from "../pages/WesternAmericaPage";
 
 
 import { Routes, Route } from "react-router-dom";
+import HolidayDetails from '../Trips/HolidayDetails';
+import Flightdetail from '../Flight/FlightDetails';
 
 const Allroutes = () => {
   return (
@@ -25,7 +25,7 @@ const Allroutes = () => {
           <Route path="/offers" element={<Offers />} />
           <Route path="/account" element={<Account />} />
           <Route path="/work" element={<Work />} />
-          <Route path="/flight" element={<FlightDetails/>} />
+          <Route path="/flight" element={<Flightdetail/>} />
           <Route path="/holiday" element={<HolidayDetails/>} />
          <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/hongkong" element={<HongKongPage />} />
