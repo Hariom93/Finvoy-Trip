@@ -1,14 +1,17 @@
 import { useParams, useNavigate } from "react-router-dom";
 import holidayImg1 from "../assets/holidayImg1.jpg";
-import HolidayNewbar from "../components/HolidayNevbar";
-
+import HolidayNevbar from "../components/HolidayNevbar";
+import SearchBar from "./TripComponents/SearchBar";
+import Deals from "./TripComponents/Deals";
+import LaxuryGetaway from "./TripComponents/LaxuryGetaway";
 export default function HolidayDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   return (
+    <>
     <div>
-      <HolidayNewbar />
+      <HolidayNevbar />
 
       {/* ✅ MAIN WRAPPER */}
       <div className="relative w-full mt-[60px]">
@@ -67,8 +70,11 @@ export default function HolidayDetails() {
             Explore
           </button>
         </div>
-
       </div>
+         <SearchBar/>
     </div>
+         <Deals/>
+         <LaxuryGetaway/>
+    </>
   );
 }

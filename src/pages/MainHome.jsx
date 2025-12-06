@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import packages from "../Data/packagesData";
@@ -202,16 +201,3 @@ export default function MainHome() {
     </>
   );
 }
-=======
-import React from 'react'
-
-const MainHome = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default MainHome
->>>>>>> 1a3bda5 (pulling)
