@@ -15,6 +15,9 @@ import WesternAmericaPage from "../pages/WesternAmericaPage";
 import { Routes, Route } from "react-router-dom";
 import HolidayDetails from '../Trips/HolidayDetails';
 import Flightdetail from '../Flight/FlightDetails';
+import FlightResults from '../Flight/flights';
+import Review from '../Flight/Flightcan';
+import SeatSelection from '../Flight/SeatSelect';
 
 const Allroutes = () => {
   return (
@@ -32,6 +35,11 @@ const Allroutes = () => {
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
           <Route path="/western-america" element={<WesternAmericaPage />} />
+          <Route path="/results" element={<FlightResults/>} />
+          <Route path="/flightconf" element={<Review/>} />
+        <Route path="/seats" element={<SeatSelection />} />
+
+
         </Routes>
       </div>
 
