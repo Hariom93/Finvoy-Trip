@@ -226,14 +226,14 @@ export default function MainHome() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-white shadow-sm h-18">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Cleartrip Logo" className="h-22 w-auto md:h-22 sm:h-20" />
+              <img src={logo} alt="Cleartrip Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
               <h1 className="text-2xl font-bold text-gray-900 hidden md:block">Finvoy-Trip</h1>
             </div>
 
