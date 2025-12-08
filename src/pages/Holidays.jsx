@@ -432,6 +432,7 @@ const Holidays = () => {
           </div>
         </div>
       </main>
+
     </div>
   );
 };
