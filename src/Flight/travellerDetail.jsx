@@ -128,7 +128,11 @@ const saveReview = () => {
 
       {/* -------- Header -------- */}
       <div className="flex items-center gap-3 mb-4">
-        <IoIosArrowBack size={24} />
+         <IoIosArrowBack
+                  size={26}
+                  onClick={() => navigate(-1)}
+                  className="cursor-pointer"
+                />
         <h2 className="text-xl font-semibold">Who's travelling?</h2>
       </div>
 

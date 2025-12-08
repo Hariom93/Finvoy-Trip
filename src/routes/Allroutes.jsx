@@ -5,7 +5,6 @@ import MyTrips from "../pages/account/MyTrips"; // ✅ matches folder structure
 import FinvoyTripWallet from "../pages/account/FinvoyTripWallet"; // ✅ matches folder structure
 import Offers from "../pages/Offers";
 import PackagePage from "../pages/PackagePage";
-import Account from "../pages/account/Account"; // ✅ matches folder structure
 import InviteCard from "../pages/account/InviteCard"; // ✅ matches folder structure
 import Work from "../pages/Work";
 import HongKongPage from "../pages/HongKongPage";
@@ -20,14 +19,17 @@ import SavePayment from '../pages/account/SavePayment'
 import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
+import Holidays from '../pages/Holidays'
+import HolidaysDetails from '../pages/HolidaysDetails'
+import Account from '../pages/Account/Account';
 import TravellerDetails from '../Flight/travellerDetail';
-
 const Allroutes = () => {
   return (
     <>
       <ScrollToTop /> 
       <div className="pb-16">
         <Routes>
+        <Route path="/HolidaysDetails/:id" element={<HolidaysDetails />} />
           <Route path="/" element={<MainHome />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
 
@@ -35,11 +37,12 @@ const Allroutes = () => {
           <Route path="/account/finvoytripwallet" element={<FinvoyTripWallet />} />
           <Route path="/account/SavePayment" element={<SavePayment />} />
           <Route path="/account/buspass" element={<BusPass />} />
-          <Route path="/account" element={<Account />} /> {/* ✅ fixed path */}
+          <Route path="/account" element={<Account/>} /> {/* ✅ fixed path */}
           <Route path="/offers" element={<Offers />} />
           <Route path="/work" element={<Work />} />
           <Route path="/flight" element={<Flightdetail />} />
           <Route path="/holiday" element={<HolidayDetails />} />
+          <Route path="/holidays" element={<Holidays />} />
           <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
@@ -48,7 +51,7 @@ const Allroutes = () => {
           <Route path="/flightconf" element={<Review/>} />
         <Route path="/seats" element={<SeatSelection />} />
 
-        <Route path="/traveller-details" element={<TravellerDetails />} />
+        <Route path="/traveller-details" element={<TravellerDetails/>} />
 
         </Routes>
       </div>

@@ -1,7 +1,5 @@
 
 @import "tailwindcss";
-
-
 @import "tailwindcss";
 
 @keyframes slideUp {
@@ -240,3 +238,18 @@ body {
     background: linear-gradient(45deg, #f59e0b, #d97706, #fbbf24);
     animation: confetti 5s linear forwards;
   }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  

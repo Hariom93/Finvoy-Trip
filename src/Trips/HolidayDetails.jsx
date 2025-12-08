@@ -54,7 +54,7 @@ export default function HolidayDetails() {
           </p>
 
           <button
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/holidays")}
             className="
               hover:-translate-y-1 transform duration-300 ease-out
               w-fit 
@@ -67,7 +67,7 @@ export default function HolidayDetails() {
               hover:bg-[#170C69]
             "
           >
-            Explore
+            Explore Now
           </button>
         </div>
       </div>

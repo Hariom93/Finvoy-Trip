@@ -74,7 +74,7 @@ export default function MainHome() {
   ];
 
   const popularDestinations = [
-    // Delhi - India's Capital
+    // Delhi - India's Capital  q
     { 
       city: 'Delhi', 
       code: 'DEL', 
@@ -226,15 +226,15 @@ export default function MainHome() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-white shadow-sm h-18">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Cleartrip Logo" className="h-10 w-auto md:h-14" />
-              <h1 className="text-2xl font-bold text-gray-900 hidden md:block">Cleartrip</h1>
+              <img src={logo} alt="Cleartrip Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
+              <h1 className="text-2xl font-bold text-gray-900 hidden md:block">Finvoy-Trip</h1>
             </div>
 
             {/* Super Coins */}
@@ -292,7 +292,7 @@ export default function MainHome() {
                 <span className="text-blue-600 text-2xl">✈️</span>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-2">Welcome to Cleartrip!</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Welcome to FInvoy-Trip!</h2>
                 <p className="text-gray-700">
                   Save big with our exclusive offers, amazing deals, and earn Supercoins on every booking!
                 </p>
@@ -328,40 +328,7 @@ export default function MainHome() {
         </section>
 
         {/* Travel Categories */}
-        <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center">Travel Categories</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-  {travelCategories.map((category, index) => (
-    <NavLink key={index} to={category.link}>
-      <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-lg hover:shadow-2xl transition duration-300 cursor-pointer hover:-translate-y-1">
-
-        {/* Icon Box */}
-        <div
-          className={`h-14 w-14 mx-auto flex items-center justify-center 
-          rounded-xl bg-gradient-to-r ${category.color} text-white mb-3 md:mb-4`}
-        >
-          <div className="text-3xl md:text-4xl">
-            {category.icon}
-          </div>
-        </div>
-
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1 md:mb-2">
-          {category.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-gray-600 text-sm">
-          {category.description}
-        </p>
-
-      </div>
-    </NavLink>
-  ))}
-</div>  
-          </div>
-        </section>      
+          
         {/* Popular Destinations */}
         <section className="py-8 md:py-12 bg-gray-100">
           <div className="container mx-auto px-4">
@@ -395,28 +362,49 @@ export default function MainHome() {
           </div>
         </section>
 
-        {/* Airline Partners */}
-        <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-10">Airline Partners</h2>
-            <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl md:rounded-2xl p-4 md:p-8 shadow-sm">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-6">
-                {airlines.map((logo, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-2 md:p-4 rounded-lg md:rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex items-center justify-center"
-                  >
-                    <img 
-                      src={logo} 
-                      alt={`Airline ${index + 1}`}
-                      className="w-full h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+{/* Airline Partners */}
+<section className="py-8 md:py-12">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-10">
+      Airline Partners
+    </h2>
+
+    <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-sm">
+
+      {/* Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-10">
+
+        {airlines.map((logo, index) => (
+          <div
+            key={index}
+            className="
+              flex items-center justify-center
+              transition-transform duration-300
+              opacity-0 animate-fadeIn
+            "
+            style={{ animationDelay: `${index * 0.05}s` }}
+          >
+            <img
+              src={logo}
+              alt={`Airline ${index + 1}`}
+              className="
+                w-full 
+                h-24 md:h-32 
+                object-contain
+                transition-all duration-300
+                hover:scale-110 hover:grayscale-0
+                filter grayscale
+              "
+            />
           </div>
-        </section>
+        ))}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         {/* Slider Section */}
         <section className="py-8 md:py-12">
@@ -509,7 +497,7 @@ export default function MainHome() {
                     <p className="font-mono font-bold text-xs md:text-sm">Use Code: {offer.code}</p>
                   </div>
                   <button className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full">
-                    Book Now
+                    Explore Now
                   </button>
                 </div>
               ))}
@@ -522,11 +510,11 @@ export default function MainHome() {
           <div className="container mx-auto px-4">
             <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl md:rounded-3xl p-6 md:p-12 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
-                About Cleartrip
+                About Finvoy-Trip
               </h2>
               <div className="prose prose-sm md:prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-4 md:mb-6">
-                  Launched in July 2006, <strong className="text-gray-900">Cleartrip Pvt Ltd</strong>, a Flipkart company, has emerged as India's fastest-growing online travel technology company. In April 2021, Flipkart acquired a majority stake in Cleartrip.
+                  Launched in July 2006, <strong className="text-gray-900">Finvoy-Trip Pvt Ltd</strong>, a Flipkart company, has emerged as India's fastest-growing online travel technology company. In April 2021, Flipkart acquired a majority stake in Cleartrip.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Cleartrip recently emerged as the no. 2 OTA player as per a study by VIDEC. With an aggressive plan to emerge as a leading innovator in the industry, Cleartrip is on its way to revolutionize travel experiences across India and beyond.
@@ -547,7 +535,7 @@ export default function MainHome() {
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-4 md:mb-6">
                 <img src={logo} alt="Cleartrip" className="h-8 md:h-10 w-auto filter brightness-0 invert" />
-                <span className="text-xl md:text-2xl font-bold">Cleartrip</span>
+                <span className="text-xl md:text-2xl font-bold">Finvoy-Trip</span>
               </div>
               <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
                 Your trusted travel partner for amazing deals and experiences across India and beyond.
