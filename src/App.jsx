@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import Allroutes from './routes/Allroutes'
 import './App.css'
@@ -9,5 +10,4 @@ function App() {
     </>
   );
 }
-
-export default App;
+export default App ;

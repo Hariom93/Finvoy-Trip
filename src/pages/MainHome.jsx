@@ -238,10 +238,6 @@ export default function MainHome() {
             </div>
 
             {/* Super Coins */}
-            <div className="border border-gray-300 flex items-center gap-2 rounded-full text-sm px-3 py-2 hover:bg-gray-50 transition-colors">
-              <img src={coinLogo} className="h-5 w-5" alt="Super Coins" />
-              <span className="font-medium">0</span>
-            </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -363,8 +359,7 @@ export default function MainHome() {
       </div>
     </NavLink>
   ))}
-</div>
-
+</div>  
           </div>
         </section>      
         {/* Popular Destinations */}

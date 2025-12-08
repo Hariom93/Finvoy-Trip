@@ -17,6 +17,10 @@ import HolidayDetails from '../Trips/HolidayDetails';
 import Flightdetail from '../Flight/FlightDetails';
 import ScrollToTop from '../components/ScrollToTop';
 import SavePayment from '../pages/account/SavePayment'
+import FlightResults from '../Flight/flights';
+import Review from '../Flight/Flightcan';
+import SeatSelection from '../Flight/SeatSelect';
+
 const Allroutes = () => {
   return (
     <>
@@ -38,6 +42,11 @@ const Allroutes = () => {
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
           <Route path="/western-america" element={<WesternAmericaPage />} />
+          <Route path="/results" element={<FlightResults/>} />
+          <Route path="/flightconf" element={<Review/>} />
+        <Route path="/seats" element={<SeatSelection />} />
+
+
         </Routes>
       </div>
       <Navbar />
