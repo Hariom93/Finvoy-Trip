@@ -20,13 +20,15 @@ import SavePayment from '../pages/account/SavePayment'
 import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
-
+import Holidays from '../pages/Holidays'
+import HolidaysDetails from '../pages/HolidaysDetails'
 const Allroutes = () => {
   return (
     <>
       <ScrollToTop /> 
       <div className="pb-16">
         <Routes>
+        <Route path="/HolidaysDetails/:id" element={<HolidaysDetails />} />
           <Route path="/" element={<MainHome />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
           <Route path="/account/InviteCard" element={<InviteCard />} />
@@ -38,6 +40,7 @@ const Allroutes = () => {
           <Route path="/work" element={<Work />} />
           <Route path="/flight" element={<Flightdetail />} />
           <Route path="/holiday" element={<HolidayDetails />} />
+          <Route path="/holidays" element={<Holidays />} />
           <Route path="/package/:id" element={<PackagePage />} />
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
