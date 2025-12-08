@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ShieldCheck, Clock, Briefcase, HeartPulse, Plane } from "lucide-react";
 
 // ---------------- SEAT TYPE LOGIC ----------------
 
@@ -205,6 +207,73 @@ export default function SeatSelection() {
   );
 }
 
+const InsuranceSection = () => {
+  const [added, setAdded] = useState(false);
+
+  return (
+    <div className="p-4">
+
+      {/* Header Tabs */}
+    
+
+      {/* Insurance Card */}
+      <div className="border rounded-xl p-4 shadow-sm bg-white">
+
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xl font-semibold">digit</h2>
+
+          <button
+            onClick={() => setAdded(!added)}
+            className={`px-4 py-1 border rounded-lg ${
+              added ? "bg-green-500 text-white" : "bg-gray-100"
+            }`}
+          >
+            {added ? "Added" : "Add"}
+          </button>
+        </div>
+
+        <p className="text-gray-700 mb-4">₹139 per traveller</p>
+
+        {/* Insurance benefits icons list (simple) */}
+        <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+
+          <div className="flex items-center gap-2">
+            ✈️ <span>₹750* on 90 mins delay</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            🎒 <span>₹7500* on baggage loss</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            🩺 <span>₹1 lakh* medical emergency</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            ✈️❌ <span>₹3,000* on missed connections</span>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Bottom footer */}
+      <div className="mt-5 border-t pt-3 flex justify-between items-center">
+        <span className="text-gray-700">
+          Insurance: <span className="font-semibold">{added ? "Added" : "Not added"}</span>
+        </span>
+
+        <div className="flex items-center gap-4">
+
+         
+        </div>
+      </div>
+
+    </div>
+  );
+};
+
+
+ 
   function MealSelection() {
   const [filter, setFilter] = useState("all");
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -366,10 +435,29 @@ export default function SeatSelection() {
       </div>
 
       {/* MAIN CONTENT */}
-      {activeTab === "seat" && <SeatMap />}
+      {activeTab === "seat" && <SeatMap /> 
+      }
       {activeTab === "meal" && <MealSelection />}
 {activeTab === "baggage" && <BaggageSelection />}
-      {activeTab === "insurance" && <div>Insurance Coming Soon...</div>}
+      {activeTab === "insurance" && <InsuranceSection />}
+
+<div className="flex items-center justify-between gap-4 mt-4">
+  <span className="font-bold text-lg">₹6,135</span>
+
+  <button
+    className="bg-orange-600 text-white px-8 py-3 rounded-xl text-[18px]"
+    onClick={() => {
+      if (activeTab === "seat") setActiveTab("meal");
+      else if (activeTab === "meal") setActiveTab("baggage");
+      else if (activeTab === "baggage") setActiveTab("insurance");
+      else navigate("/traveller-details");
+    }}
+  >
+    Continue
+  </button>
+</div>
+
+
 
       {/* BOTTOM BAR */}
       <div className="fixed bottom-0 left-0 w-full bg-white p-4 border-t shadow-lg">

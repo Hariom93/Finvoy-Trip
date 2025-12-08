@@ -17,6 +17,7 @@ import Flightdetail from '../Flight/FlightDetails';
 import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
+import TravellerDetails from '../Flight/travellerDetail';
 
 const Allroutes = () => {
   return (
@@ -38,6 +39,7 @@ const Allroutes = () => {
           <Route path="/flightconf" element={<Review/>} />
         <Route path="/seats" element={<SeatSelection />} />
 
+        <Route path="/traveller-details" element={<TravellerDetails />} />
 
         </Routes>
       </div>
