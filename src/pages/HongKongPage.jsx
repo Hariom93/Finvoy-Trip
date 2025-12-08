@@ -177,81 +177,106 @@ const HongKongPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Now starts at the top since navbar is removed */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Hero Section - Taller container */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-              Amazing Hong Kong Deals
-            </h1>
-            <p className="text-xl opacity-90 mb-8">
-              Discover exclusive offers on hotels, flights, activities and more in Hong Kong
-            </p>
+        <div className="container mx-auto px-4 py-16 lg:py-20">
+          <div className="max-w-4xl">
+            <div className="mb-8">
+              <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-6 border border-white/30">
+                <span className="font-medium">Hong Kong - Asia's World City</span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                Amazing Hong Kong <br />Deals & Offers
+              </h1>
+              <p className="text-xl lg:text-2xl opacity-95 mb-10 max-w-2xl font-light">
+                Discover exclusive offers on hotels, flights, activities and more in vibrant Hong Kong
+              </p>
+            </div>
             
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="bg-white rounded-xl p-2 shadow-xl">
+            <form onSubmit={handleSearch} className="bg-white rounded-2xl p-3 shadow-2xl">
               <div className="flex flex-col lg:flex-row">
-                <div className="flex-1 flex items-center px-4 py-3">
-                  <FaSearch className="text-gray-400 mr-3" />
+                <div className="flex-1 flex items-center px-6 py-4">
+                  <FaSearch className="text-gray-400 mr-4 text-xl" />
                   <input
                     type="text"
-                    placeholder="Search for hotels, flights, activities..."
-                    className="w-full outline-none text-gray-800 placeholder-gray-400"
+                    placeholder="Search for hotels, flights, activities in Hong Kong..."
+                    className="w-full outline-none text-gray-800 placeholder-gray-400 text-lg"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
                 </div>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap hover:-translate-y-1"
                 >
-                  Search Offers
+                  Search Hong Kong
                 </button>
               </div>
             </form>
+
+            {/* Quick Stats */}
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="bg-white/20 backdrop-blur-sm p-5 rounded-xl border border-white/30">
+                <div className="text-2xl font-bold">56+</div>
+                <div className="text-sm opacity-95">Exclusive Offers</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm p-5 rounded-xl border border-white/30">
+                <div className="text-2xl font-bold">35%</div>
+                <div className="text-sm opacity-95">Average Savings</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm p-5 rounded-xl border border-white/30">
+                <div className="text-2xl font-bold">4.7</div>
+                <div className="text-sm opacity-95">Average Rating</div>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm p-5 rounded-xl border border-white/30">
+                <div className="text-2xl font-bold">24/7</div>
+                <div className="text-sm opacity-95">Support</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12 lg:py-16">
         {/* Categories Filter */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">Browse Categories</h2>
-            <div className="flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-2">
-                <FaFilter className="text-gray-500" />
-                <select 
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="border rounded-lg px-3 py-1 text-gray-700"
-                >
-                  <option value="popular">Most Popular</option>
-                  <option value="discount">Highest Discount</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Highest Rated</option>
-                </select>
-              </div>
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">Browse Hong Kong Categories</h2>
+            <div className="hidden lg:flex items-center space-x-2">
+              <FaFilter className="text-gray-500" />
+              <select 
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="popular">Most Popular</option>
+                <option value="discount">Highest Discount</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+              </select>
             </div>
           </div>
           
-          {/* Categories Scrollable Tabs */}
-          <div className="overflow-x-auto pb-4">
-            <div className="flex space-x-2 min-w-max">
+          {/* Categories Scrollable Tabs - Taller */}
+          <div className="overflow-x-auto pb-6">
+            <div className="flex space-x-4 min-w-max">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-3 rounded-full font-medium whitespace-nowrap transition-colors ${
+                  className={`px-8 py-4 rounded-xl font-medium whitespace-nowrap transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white text-gray-700 border hover:bg-gray-50'
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 border border-gray-200 hover:bg-blue-50'
                   }`}
                 >
                   {category.name}
-                  <span className="ml-2 text-sm opacity-75">({category.count})</span>
+                  <span className={`ml-3 text-sm ${selectedCategory === category.id ? 'opacity-80' : 'text-gray-500'}`}>
+                    ({category.count})
+                  </span>
                 </button>
               ))}
             </div>
@@ -259,48 +284,49 @@ const HongKongPage = () => {
         </div>
 
         {/* Offers Grid */}
-        <div className="mb-12">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-semibold text-gray-900">
-              {filteredOffers.length} Offers Found
+        <div className="mb-20">
+          <div className="flex items-center justify-between mb-10">
+            <h3 className="text-2xl font-bold text-gray-900">
+              {filteredOffers.length} Hong Kong Offers Found
             </h3>
             <div className="lg:hidden">
-              <button className="flex items-center text-gray-600">
-                <FaFilter className="mr-2" />
+              <button className="flex items-center text-gray-600 bg-white px-5 py-3 rounded-xl border">
+                <FaFilter className="mr-3" />
                 Filter & Sort
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Taller offer cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredOffers.map((offer) => (
-              <div key={offer.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                {/* Offer Image */}
-                <div className="relative h-48 overflow-hidden">
+              <div key={offer.id} className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                {/* Offer Image - Taller */}
+                <div className="relative h-64 overflow-hidden">
                   <img 
                     src={offer.image} 
                     alt={offer.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
-                  {/* Discount Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  {/* Discount Badge - Larger */}
+                  <div className="absolute top-5 left-5 bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">
                     {offer.discount} OFF
+                  </div>
+                  {/* Category Badge */}
+                  <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800">
+                    {offer.category}
                   </div>
                 </div>
 
-                {/* Offer Details */}
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h4 className="text-xl font-bold text-gray-900">{offer.title}</h4>
-                    <span className="bg-blue-100 text-blue-600 text-xs font-semibold px-2 py-1 rounded">
-                      {offer.category}
-                    </span>
+                {/* Offer Details - More padding */}
+                <div className="p-7">
+                  <div className="mb-5">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">{offer.title}</h4>
+                    <p className="text-gray-600">{offer.description}</p>
                   </div>
                   
-                  <p className="text-gray-600 mb-4">{offer.description}</p>
-                  
                   {/* Rating */}
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-5">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <FaStar 
@@ -312,41 +338,46 @@ const HongKongPage = () => {
                           }`}
                         />
                       ))}
-                      <span className="ml-2 text-gray-700 font-semibold">{offer.rating}</span>
-                      <span className="ml-1 text-gray-500">({offer.reviews} reviews)</span>
+                      <span className="ml-3 font-semibold text-gray-800">{offer.rating}</span>
+                      <span className="ml-2 text-gray-500">({offer.reviews} reviews)</span>
                     </div>
                   </div>
 
                   {/* Price */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-6">
                     <div>
-                      <span className="text-2xl font-bold text-gray-900">{offer.price}</span>
-                      <span className="ml-2 text-gray-500 line-through">{offer.originalPrice}</span>
+                      <div className="flex items-baseline">
+                        <span className="text-3xl font-bold text-gray-900">{offer.price}</span>
+                        <span className="ml-4 text-gray-500 line-through text-lg">{offer.originalPrice}</span>
+                      </div>
+                      <div className="text-sm text-blue-600 font-semibold mt-2">
+                        Save ${parseInt(offer.originalPrice.replace('$', '')) - parseInt(offer.price.replace('$', ''))}
+                      </div>
                     </div>
                     <div className="text-sm text-gray-600 flex items-center">
-                      <FaCalendarAlt className="mr-1" />
+                      <FaCalendarAlt className="mr-2" />
                       {offer.validity}
                     </div>
                   </div>
 
                   {/* Terms */}
-                  <div className="text-sm text-gray-600 mb-6 flex items-center">
-                    <FaTag className="mr-2" />
-                    {offer.terms}
+                  <div className="text-sm text-gray-600 mb-7 flex items-start">
+                    <FaTag className="mr-3 mt-1 flex-shrink-0" />
+                    <span>{offer.terms}</span>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex space-x-3">
+                  {/* Action Buttons - Taller */}
+                  <div className="flex space-x-4">
                     <a
                       href={offer.bookingLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 flex items-center justify-center hover:from-blue-700 hover:to-purple-700"
                     >
                       Book Now
-                      <HiExternalLink className="ml-2" />
+                      <HiExternalLink className="ml-3" />
                     </a>
-                    <button className="px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <button className="px-6 py-4 border-2 border-blue-500 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
                       Save
                     </button>
                   </div>
@@ -356,49 +387,50 @@ const HongKongPage = () => {
           </div>
         </div>
 
-        {/* Why Hong Kong Section */}
-        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 lg:p-12 text-white mb-12">
-          <h2 className="text-3xl font-bold mb-6">Why Visit Hong Kong?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/10 p-6 rounded-xl">
-              <div className="text-3xl mb-4">🏙️</div>
-              <h4 className="text-xl font-semibold mb-2">Iconic Skyline</h4>
-              <p className="opacity-90">Experience the world-famous Victoria Harbour skyline and Symphony of Lights</p>
+        {/* Why Hong Kong Section - Taller */}
+        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-10 lg:p-14 text-white mb-20">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-center">Why Visit Hong Kong?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="text-4xl mb-5">🏙️</div>
+              <h4 className="text-xl font-semibold mb-4">Iconic Skyline</h4>
+              <p className="opacity-90">Experience the world-famous Victoria Harbour skyline and Symphony of Lights show</p>
             </div>
-            <div className="bg-white/10 p-6 rounded-xl">
-              <div className="text-3xl mb-4">🍜</div>
-              <h4 className="text-xl font-semibold mb-2">Food Paradise</h4>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="text-4xl mb-5">🍜</div>
+              <h4 className="text-xl font-semibold mb-4">Food Paradise</h4>
               <p className="opacity-90">From Michelin-starred restaurants to street food, savor diverse culinary delights</p>
             </div>
-            <div className="bg-white/10 p-6 rounded-xl">
-              <div className="text-3xl mb-4">🛍️</div>
-              <h4 className="text-xl font-semibold mb-2">Shopping Haven</h4>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="text-4xl mb-5">🛍️</div>
+              <h4 className="text-xl font-semibold mb-4">Shopping Haven</h4>
               <p className="opacity-90">Luxury malls, markets, and boutiques offering everything from fashion to electronics</p>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center py-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* CTA Section - Taller */}
+        <div className="text-center py-16 px-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
             Ready to Explore Hong Kong?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Book your perfect Hong Kong trip with our exclusive offers and enjoy the best travel experience
+          <p className="text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+            Book your perfect Hong Kong trip with our exclusive offers and enjoy the best travel experience in Asia's World City
           </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <button className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <button className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               Download Cleartrip App
             </button>
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300">
+            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               View All Hong Kong Deals
             </button>
           </div>
         </div>
       </main>
 
-      {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white">
+      {/* Footer - Optional (commented out) */}
+      {/* 
+      <footer className="bg-gray-900 text-white">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -454,7 +486,8 @@ const HongKongPage = () => {
             <p>© 2024 Cleartrip. All rights reserved. | Hong Kong Travel Offers</p>
           </div>
         </div>
-      </footer> */}
+      </footer>
+      */}
     </div>
   );
 };

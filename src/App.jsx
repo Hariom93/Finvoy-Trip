@@ -1,12 +1,13 @@
 
-import React from 'react'
+import { useState } from 'react'
 import Allroutes from './routes/Allroutes'
-const App = () => {
+import './App.css'
+function App() {
+  const [count, setCount] = useState(0)
   return (
-    <div>
-     <Allroutes/>   
-    </div>
-  )
+    <>
+     <Allroutes/>
+    </>
+  );
 }
-
-export default App
+export default App ;
