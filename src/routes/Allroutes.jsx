@@ -6,7 +6,6 @@ import MyTrips from "../pages/account/MyTrips";
 import FinvoyTripWallet from "../pages/account/FinvoyTripWallet";
 import Offers from "../pages/Offers";
 import PackagePage from "../pages/PackagePage";
-import Account from "../pages/account/Account";
 import InviteCard from "../pages/account/InviteCard";
 import Work from "../pages/Work";
 import HongKongPage from "../pages/HongKongPage";
@@ -24,8 +23,8 @@ import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
 import Destinations from '../pages/PopularDestinations/Destinations'
 import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
-
-
+import Account from "../pages/Account/Account";
+import TravellerDetails from "../Flight/travellerDetail";
 // import DestinationPage from '../pages/DestinationPage';  // ⭐ add this
 
 const Allroutes = () => {
@@ -42,6 +41,7 @@ const Allroutes = () => {
           <Route path="/holiday/:id" element={<HolidaysDetails />} />
           <Route path="/" element={<MainHome />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
+
           <Route path="/account/InviteCard" element={<InviteCard />} />
           <Route path="/account/finvoytripwallet" element={<FinvoyTripWallet />} />
           <Route path="/account/savepayment" element={<SavePayment />} />
@@ -55,10 +55,13 @@ const Allroutes = () => {
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
           <Route path="/western-america" element={<WesternAmericaPage />} />
-          <Route path="/results" element={<FlightResults />} />
-          <Route path="/flightconf" element={<Review />} />
-          <Route path="/seats" element={<SeatSelection />} />
-        </Routes>
+          <Route path="/results" element={<FlightResults/>} />
+          <Route path="/flightconf" element={<Review/>} />
+        <Route path="/seats" element={<SeatSelection />} />
+
+        <Route path="/traveller-details" element={<TravellerDetails/>} />
+
+          </Routes>
       </div>
       <Navbar />
     </>

@@ -4,7 +4,7 @@ import { FaHome, FaSuitcase, FaTag, FaUserCircle, FaBriefcase } from "react-icon
 export default function Navbar() {
   const menuItems = [
     { path: "/", label: "Home", icon: <FaHome className="text-lg mb-1" /> },
-    { path: "/trips", label: "My Trips", icon: <FaSuitcase className="text-lg mb-1" /> },
+    { path: "/account/mytrips", label: "My Trips", icon: <FaSuitcase className="text-lg mb-1" /> },
     { path: "/offers", label: "Offers", icon: <FaTag className="text-lg mb-1" /> },
     { path: "/account", label: "Account", icon: <FaUserCircle className="text-lg mb-1" /> },
     { path: "/work", label: "Work", icon: <FaBriefcase className="text-lg mb-1" /> },
