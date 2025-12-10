@@ -2,25 +2,27 @@ import HolidaysDetails from "../pages/HolidaysDetails";
 import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
-import MyTrips from "../pages/account/MyTrips";
-import FinvoyTripWallet from "../pages/account/FinvoyTripWallet";
+import MyTrips from "../pages/Account/MyTrips";
+import FinvoyTripWallet from "../pages/Account/FinvoyTripWallet";
 import Offers from "../pages/Offers";
 import PackagePage from "../pages/PackagePage";
-import InviteCard from "../pages/account/InviteCard";
+import InviteCard from "../pages/Account/InviteCard";
 import Work from "../pages/Work";
 import HongKongPage from "../pages/HongKongPage";
 import SaudiPage from "../pages/SaudiPage";
 import WesternAmericaPage from "../pages/WesternAmericaPage";
-import BusPass from "../pages/account/Buspas";
+import BusPass from "../pages/Account/Buspas";
 import { Routes, Route } from "react-router-dom";
 import HolidayDetails from '../Trips/HolidayDetails';
 import Flightdetail from '../Flight/FlightDetails';
 import ScrollToTop from '../components/ScrollToTop';
-import SavePayment from '../pages/account/SavePayment';
+import SavePayment from '../pages/Account/SavePayment';
 import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
+import Destinations from '../pages/PopularDestinations/Destinations'
+import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import Account from "../pages/Account/Account";
 import TravellerDetails from "../Flight/travellerDetail";
 // import DestinationPage from '../pages/DestinationPage';  // ⭐ add this
@@ -35,7 +37,8 @@ const Allroutes = () => {
           {/* <Route path="/destination/:place" element={<DestinationPage />} /> */}
           {/* Holidays routes */}
           <Route path="/holidays" element={<Holidays />} />
-          <Route path="/destination/:id" element={<HolidaysDetails />} />
+          <Route path="/destination/:id" element={<DestinationDetail />} />
+          <Route path="/holiday/:id" element={<HolidaysDetails />} />
           <Route path="/" element={<MainHome />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
 

@@ -74,60 +74,67 @@ export default function MainHome() {
   ];
 
   const popularDestinations = [
-    // Delhi - India's Capital  q
+    // Delhi
     { 
-      city: 'Delhi', 
-      code: 'DEL', 
-      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'India Gate',
-      country: 'India'
+      id: "delhi",   // ✅ added ID
+      city: "Delhi",
+      code: "DEL",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "India Gate",
+      country: "India"
     },
-    
-    // Mumbai - Financial Capital
+  
+    // Mumbai
     { 
-      city: 'Mumbai', 
-      code: 'BOM', 
-      image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Chhatrapati Shivaji Terminus',
-      country: 'India'
+      id: "mumbai",  // ✅ added ID
+      city: "Mumbai",
+      code: "BOM",
+      image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Chhatrapati Shivaji Terminus",
+      country: "India"
     },
-    
-    // Bangalore - IT Hub
+  
+    // Bangalore
     { 
-      city: 'Bangalore', 
-      code: 'BLR', 
-      image: 'https://media.istockphoto.com/id/2224221889/photo/beautiful-view-of-bangalore-skyline-cityscape-at-the-night.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVsHeF5XPJ_1XB2H6dclrDDHpR2Nlr6xncdeQD7JByI=',
-      landmark: 'Vidhana Soudha',
-      country: 'India'
+      id: "bangalore", // ✅ added ID
+      city: "Bangalore",
+      code: "BLR",
+      image: "https://media.istockphoto.com/id/2224221889/photo/beautiful-view-of-bangalore-skyline-cityscape-at-the-night.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVsHeF5XPJ_1XB2H6dclrDDHpR2Nlr6xncdeQD7JByI=",
+      landmark: "Vidhana Soudha",
+      country: "India"
     },
-    
-    // Goa - Beach Paradise
+  
+    // Goa
     { 
-      city: 'Goa', 
-      code: 'GOI', 
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Baga Beach',
-      country: 'India'
+      id: "goa",  // ✅ added ID
+      city: "Goa",
+      code: "GOI",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Baga Beach",
+      country: "India"
     },
-    
-    // Dubai - Modern Metropolis
+  
+    // Dubai
     { 
-      city: 'Dubai', 
-      code: 'DXB', 
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Burj Khalifa',
-      country: 'UAE'
+      id: "dubai", // ✅ added ID
+      city: "Dubai",
+      code: "DXB",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Burj Khalifa",
+      country: "UAE"
     },
-    
-    // Singapore - Garden City
+  
+    // Singapore
     { 
-      city: 'Singapore', 
-      code: 'SIN', 
-      image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Marina Bay Sands',
-      country: 'Singapore'
+      id: "singapore", // ✅ added ID
+      city: "Singapore",
+      code: "SIN",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Marina Bay Sands",
+      country: "Singapore"
     },
   ];
+  
 
   const trendingHotels = [
     {
@@ -341,6 +348,7 @@ export default function MainHome() {
               {popularDestinations.map((dest, index) => (
                 <div
                   key={index}
+                  onClick={() => navigate(`/destination/${dest.id}`)}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
                 >
                   <div className="relative h-32 md:h-40 overflow-hidden">
