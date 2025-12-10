@@ -1,13 +1,12 @@
 // pages/DestinationsPage.jsx
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Search,
   MapPin,
   Filter,
   Star,
   Calendar,
-  Users,
   Plane,
   Hotel,
   UtensilsCrossed,
@@ -19,15 +18,17 @@ import {
   TreePine,
   Waves,
   Camera,
-  Loader,
   Sparkles
 } from 'lucide-react';
-const Holidays = () => {
+
+const DestinationsPage = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedSeason, setSelectedSeason] = useState('all');
   const [destinations, setDestinations] = useState([]);
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulate API loading
@@ -77,7 +78,7 @@ const Holidays = () => {
       id: 'switzerland',
       name: 'Swiss Alps',
       country: 'Switzerland',
-      image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w-800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&auto=format&fit=crop',
       rating: 4.7,
       reviews: 1876,
       description: 'Majestic mountains and alpine beauty',
@@ -94,7 +95,7 @@ const Holidays = () => {
       id: 'bali',
       name: 'Bali',
       country: 'Indonesia',
-      image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w-800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800&auto=format&fit=crop',
       rating: 4.6,
       reviews: 3124,
       description: 'Island of Gods with rich culture',
@@ -111,7 +112,7 @@ const Holidays = () => {
       id: 'paris',
       name: 'Paris',
       country: 'France',
-      image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w-800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop',
       rating: 4.5,
       reviews: 2890,
       description: 'City of love and lights',
@@ -203,10 +204,27 @@ const Holidays = () => {
     return matchesSearch && matchesCategory && matchesSeason;
   });
 
+  const handleCardClick = (destinationId) => {
+    navigate(`/destination/${destinationId}`);
+  };
+
+  // Loading State
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white">
+        <div className="relative">
+          <div className="w-24 h-24 border-4 border-teal-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <span className="text-xl font-bold text-teal-600">Loading</span>
+          </div>
+        </div>
+        <p className="mt-4 text-gray-600">Discovering amazing destinations...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-teal-600 to-blue-600 text-white">
         <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -328,10 +346,10 @@ const Holidays = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {filteredDestinations.map(destination => (
-                <Link 
+                <div 
                   key={destination.id}
-                  to={`/destination/${destination.id}`}
-                  className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                  onClick={() => handleCardClick(destination.id)}
+                  className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
                 >
                   <div className="relative overflow-hidden">
                     <img 
@@ -383,12 +401,18 @@ const Holidays = () => {
                         <div className="text-2xl font-bold text-gray-800">{destination.price}</div>
                         <div className="text-gray-500 line-through text-sm">{destination.originalPrice}</div>
                       </div>
-                      <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-medium">
-                        View Details
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCardClick(destination.id);
+                        }}
+                        className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-medium"
+                      >
+                        Explore Now
                       </button>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           )}
@@ -432,9 +456,8 @@ const Holidays = () => {
           </div>
         </div>
       </main>
-
     </div>
   );
 };
 
-export default Holidays;
+export default DestinationsPage;

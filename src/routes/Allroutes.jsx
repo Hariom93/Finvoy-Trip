@@ -21,6 +21,8 @@ import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
+import Destinations from '../pages/PopularDestinations/Destinations'
+import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import Account from "../pages/Account/Account";
 import TravellerDetails from "../Flight/travellerDetail";
 // import DestinationPage from '../pages/DestinationPage';  // ⭐ add this
@@ -35,7 +37,8 @@ const Allroutes = () => {
           {/* <Route path="/destination/:place" element={<DestinationPage />} /> */}
           {/* Holidays routes */}
           <Route path="/holidays" element={<Holidays />} />
-          <Route path="/destination/:id" element={<HolidaysDetails />} />
+          <Route path="/destination/:id" element={<DestinationDetail />} />
+          <Route path="/holiday/:id" element={<HolidaysDetails />} />
           <Route path="/" element={<MainHome />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
 

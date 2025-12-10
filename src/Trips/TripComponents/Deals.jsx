@@ -56,7 +56,7 @@ export default function Deals() {
               alt={destinations[current].title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 rounded-xl">
+            <div className="absolute  inset-0 bg-black/30 flex flex-col justify-end p-6 rounded-xl">
               <h1 className="text-4xl font-bold text-white">
                 {destinations[current].title}
               </h1>
@@ -72,7 +72,7 @@ export default function Deals() {
         </AnimatePresence>
 
         {/* Small overlay card (next destination) */}
-        <div className="absolute bottom-4 right-4 w-28 h-20 rounded-xl overflow-hidden shadow-lg cursor-pointer">
+        <div className="absolute top-7 right-4 w-28 h-20 rounded-xl overflow-hidden shadow-lg cursor-pointer">
           <img
             src={destinations[(current + 1) % destinations.length].image}
             alt={destinations[(current + 1) % destinations.length].title}
