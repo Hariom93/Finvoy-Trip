@@ -13,14 +13,14 @@ export default function HolidayNavbar() {
 
   return (
     <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-3">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8">
         
         {/* ✅ LOGO (Perfect Size) */}
         <NavLink to="/" className="flex items-center">
           <img
             src={logo}
             alt="Logo"
-            className="h-20 md:h-16 object-contain"
+            className="h-20 w-auto md:h-22 sm:h-18 "
           />
         </NavLink>
 

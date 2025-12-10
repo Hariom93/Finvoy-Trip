@@ -226,7 +226,7 @@ const LuxuryGetaway = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 md:p-6">
+    <div className="min-h-screen text-white p-4 md:p-6">
 
       {/* ✅ HOME PAGE */}
       {!selectedDestination && (

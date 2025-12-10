@@ -92,9 +92,11 @@ const FlightSearch = () => {
   return (
     <div className="p-4">
       {/* Header */}
-      <div className="flex items-center gap-3 text-xl font-semibold mb-4">
-        <IoIosArrowBack size={24} /> Flights
-      </div>
+       <IoIosArrowBack
+                size={26}
+                onClick={() => navigate(-1)}
+                className="cursor-pointer"
+              />
 
       {/* Main Card */}
       <div className="p-5 rounded-3xl space-y-4 ">
