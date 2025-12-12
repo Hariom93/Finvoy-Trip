@@ -231,7 +231,6 @@ export default function MainHome() {
     if (diff < -50) prevSlide();
     setStartX(null);
   };
-
   return (
     <div className="min-h-screen bg-gray-50 ">
       {/* Header */}
@@ -500,7 +499,9 @@ export default function MainHome() {
                   <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 inline-block">
                     <p className="font-mono font-bold text-xs md:text-sm">Use Code: {offer.code}</p>
                   </div>
-                  <button className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full">
+                  <button
+                     onClick={() => navigate("/exclusiveoffer")}
+                  className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full">
                     Explore Now
                   </button>
                 </div>
