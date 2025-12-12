@@ -349,7 +349,7 @@ export default function MainHome() {
               {popularDestinations.map((dest, index) => (
                 <div
                   key={index}
-                  onClick={() => navigate(`/destination/${dest.id}`)}
+                  onClick={() => navigate(`/destinations/${dest.id}`)}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
                 >
                   <div className="relative h-32 md:h-40 overflow-hidden">
@@ -411,9 +411,6 @@ export default function MainHome() {
     </div>
   </div>
 </section>
-
-
-
         {/* Slider Section */}
         <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">

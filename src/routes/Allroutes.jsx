@@ -21,11 +21,21 @@ import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
-import Destinations from '../pages/PopularDestinations/Destinations'
+
+import Destinations from '../pages/PopularDestinations/Destinations';
 import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
+import DestinationDetails from "../pages/PopularDestinations/DestinationDetails";
+
 import Account from "../pages/Account/Account";
 import TravellerDetails from "../Flight/travellerDetail";
-// import DestinationPage from '../pages/DestinationPage';  // ⭐ add this
+
+// import Dehlii from "../PopularDestinationss/Dehlii.jsx";
+// import Dubai from "../PopularDestinationss/Dubai.jsx";
+// import Singapore from "../PopularDestinationss/Singapore.jsx";
+// import Goa from "../PopularDestinationss/Goa.jsx";
+// import Mumbai from "../PopularDestinationss/Mumbai.jsx";
+// import Bangalore from "../PopularDestinationss/Banglore.jsx";
+
 
 const Allroutes = () => {
   return (
@@ -33,35 +43,50 @@ const Allroutes = () => {
       <ScrollToTop />
       <div className="pb-16">
         <Routes>
-          {/* ⭐ Dynamic destination route */}
-          {/* <Route path="/destination/:place" element={<DestinationPage />} /> */}
-          {/* Holidays routes */}
-          <Route path="/holidays" element={<Holidays />} />
-          <Route path="/destination/:id" element={<DestinationDetail />} />
-          <Route path="/holiday/:id" element={<HolidaysDetails />} />
-          <Route path="/" element={<MainHome />} />
-          <Route path="/account/mytrips" element={<MyTrips />} />
 
+          {/* Popular Destination Pages
+          <Route path="/populardestinationss/dehlii" element={<Dehlii />} />
+          <Route path="/populardestinationss/dubai" element={<Dubai />} />
+          <Route path="/populardestinationss/singapore" element={<Singapore />} />
+          <Route path="/populardestinationss/goa" element={<Goa />} />
+          <Route path="/populardestinationss/mumbai" element={<Mumbai />} />
+          <Route path="/populardestinationss/bangalore" element={<Bangalore />} /> */}
+
+          {/* Dynamic Destination Detail */}
+          <Route path="/destination/:id" element={<DestinationDetail />} />
+          <Route path="/destinations/:id" element={<DestinationDetails />} />
+
+          {/* Holidays */}
+          <Route path="/holiday" element={<Holidays />} />
+          <Route path="/holiday/:id" element={<HolidaysDetails />} />
+
+          {/* Main */}
+          <Route path="/" element={<MainHome />} />
+
+          {/* Account */}
+          <Route path="/account" element={<Account />} />
+          <Route path="/account/mytrips" element={<MyTrips />} />
           <Route path="/account/InviteCard" element={<InviteCard />} />
           <Route path="/account/finvoytripwallet" element={<FinvoyTripWallet />} />
           <Route path="/account/savepayment" element={<SavePayment />} />
           <Route path="/account/buspass" element={<BusPass />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/offers" element={<Offers />} />
-          <Route path="/work" element={<Work />} />
+
+          {/* Flight */}
           <Route path="/flight" element={<Flightdetail />} />
-          <Route path="/holiday" element={<HolidayDetails />} />
+          <Route path="/results" element={<FlightResults />} />
+          <Route path="/flightconf" element={<Review />} />
+          <Route path="/seats" element={<SeatSelection />} />
+          <Route path="/traveller-details" element={<TravellerDetails />} />
+
+          {/* Packages */}
           <Route path="/package/:id" element={<PackagePage />} />
+
+          {/* Country Pages */}
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
           <Route path="/western-america" element={<WesternAmericaPage />} />
-          <Route path="/results" element={<FlightResults/>} />
-          <Route path="/flightconf" element={<Review/>} />
-        <Route path="/seats" element={<SeatSelection />} />
 
-        <Route path="/traveller-details" element={<TravellerDetails/>} />
-
-          </Routes>
+        </Routes>
       </div>
       <Navbar />
     </>
