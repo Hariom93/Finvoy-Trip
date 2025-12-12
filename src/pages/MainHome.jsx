@@ -241,7 +241,6 @@ export default function MainHome() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <img src={logo} alt="Cleartrip Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
-              <h1 className="text-2xl font-bold text-gray-900 hidden md:block">Finvoy-Trip</h1>
             </div>
 
             {/* Super Coins */}
