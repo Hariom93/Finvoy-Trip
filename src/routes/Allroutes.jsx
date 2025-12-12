@@ -2,26 +2,26 @@ import HolidaysDetails from "../pages/HolidaysDetails";
 import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
-import MyTrips from "../pages/Account/MyTrips";
-import FinvoyTripWallet from "../pages/Account/FinvoyTripWallet";
+import MyTrips from "../pages/account/MyTrips";
+import FinvoyTripWallet from "../pages/account/FinvoyTripWallet";
 import Offers from "../pages/Offers";
 import PackagePage from "../pages/PackagePage";
-import InviteCard from "../pages/Account/InviteCard";
+import InviteCard from "../pages/account/InviteCard";
 import Work from "../pages/Work";
 import HongKongPage from "../pages/HongKongPage";
 import SaudiPage from "../pages/SaudiPage";
 import WesternAmericaPage from "../pages/WesternAmericaPage";
-import BusPass from "../pages/Account/Buspas";
+import BusPass from "../pages/account/Buspas";
 import { Routes, Route } from "react-router-dom";
 import HolidayDetails from '../Trips/HolidayDetails';
 import Flightdetail from '../Flight/FlightDetails';
 import ScrollToTop from '../components/ScrollToTop';
-import SavePayment from '../pages/Account/SavePayment';
+import SavePayment from '../pages/account/SavePayment';
 import FlightResults from '../Flight/flights';
 import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
-
+import ExclusiveOffer from "../pages/ExclusiveOffer";
 import Destinations from '../pages/PopularDestinations/Destinations';
 import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import DestinationDetails from "../pages/PopularDestinations/DestinationDetails";
@@ -55,6 +55,7 @@ const Allroutes = () => {
           {/* Dynamic Destination Detail */}
           <Route path="/destination/:id" element={<DestinationDetail />} />
           <Route path="/destinations/:id" element={<DestinationDetails />} />
+          <Route path="/exclusiveoffer" element={<ExclusiveOffer />} />
 
           {/* Holidays */}
           <Route path="/holiday" element={<Holidays />} />
