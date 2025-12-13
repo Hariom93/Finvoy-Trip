@@ -1,6 +1,8 @@
 // pages/DestinationDetailPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import BackButton from "../components/Backbutton"; 
+
 import {
   ArrowLeft,
   Star,
@@ -174,7 +176,7 @@ const HolidayDetails = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Destination Not Found</h2>
           <p className="text-gray-600 mb-6">The destination you're looking for doesn't exist.</p>
           <button 
-            onClick={() => navigate('/destinations')}
+            onClick={() => navigate('/')}
             className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -189,13 +191,7 @@ const HolidayDetails = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Back Button */}
       <div className="container mx-auto px-4 pt-6">
-        <button 
-          onClick={() => navigate('/destinations')}
-          className="flex items-center space-x-2 text-gray-600 hover:text-gray-800"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Destinations</span>
-        </button>
+       <BackButton/>
       </div>
 
       {/* Hero Image */}

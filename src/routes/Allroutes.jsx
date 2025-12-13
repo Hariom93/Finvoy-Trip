@@ -25,7 +25,7 @@ import ExclusiveOffer from "../pages/ExclusiveOffer";
 import Destinations from '../pages/PopularDestinations/Destinations';
 import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import DestinationDetails from "../pages/PopularDestinations/DestinationDetails";
-
+import DetailCard from '../pages/Getawayspage/DetailCard';
 import Account from "../pages/Account/Account";
 import TravellerDetails from "../Flight/travellerDetail";
 
@@ -56,7 +56,7 @@ const Allroutes = () => {
           <Route path="/destination/:id" element={<DestinationDetail />} />
           <Route path="/destinations/:id" element={<DestinationDetails />} />
           <Route path="/exclusiveoffer" element={<ExclusiveOffer />} />
-
+          <Route path="/detail/:destination/:id" element={<DetailCard />} />
           {/* Holidays */}
           <Route path="/holiday" element={<Holidays />} />
           <Route path="/holiday/:id" element={<HolidaysDetails />} />

@@ -20,6 +20,7 @@ import {
   Camera,
   Sparkles
 } from 'lucide-react';
+import BackButton from "../components/BackButton";
 
 const DestinationsPage = () => {
   const [loading, setLoading] = useState(true);
@@ -225,6 +226,7 @@ const DestinationsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+       <BackButton  className="mt-4 ml-4 " />
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-teal-600 to-blue-600 text-white">
         <div className="absolute inset-0 bg-black opacity-40"></div>
