@@ -27,6 +27,7 @@ import {
   Hotel,
   Car
 } from 'lucide-react';
+import BackButton from "../../components/backbutton"; 
 
 const InviteCard = () => {
   const [loading, setLoading] = useState(true);
@@ -194,6 +195,7 @@ const InviteCard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Header */}
+      <BackButton  className="mt-4" />
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

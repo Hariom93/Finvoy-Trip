@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { HiExternalLink } from 'react-icons/hi';
-
+import { useNavigate } from 'react-router-dom';
+import BackButton from "../components/Backbutton";
+// Inside component:
+// Change for each page
 const HongKongPage = () => {
+  const navigate = useNavigate();
+const destinationName = 'saudi-arabia'; 
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -179,6 +184,8 @@ const HongKongPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
       {/* Hero Section - Taller container */}
+      <BackButton className="container mx-auto px-4 pt-6"/>
+
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 py-16 lg:py-20">
           <div className="max-w-4xl">
@@ -369,12 +376,10 @@ const HongKongPage = () => {
                   {/* Action Buttons - Taller */}
                   <div className="flex space-x-4">
                     <a
-                      href={offer.bookingLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={() => navigate(`/detail/${destinationName}/${offer.id}`)}
                       className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 flex items-center justify-center hover:from-blue-700 hover:to-purple-700"
                     >
-                      Book Now
+                      Explore Now
                       <HiExternalLink className="ml-3" />
                     </a>
                     <button className="px-6 py-4 border-2 border-blue-500 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-colors">

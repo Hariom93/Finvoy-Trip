@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Star, MapPin, Calendar, Users, ArrowRight, Clock, Tag } from "lucide-react";
+import BackButton from "../components/Backbutton";
 
 const offerList = [
   {
@@ -136,6 +137,7 @@ export default function ExclusiveOffer() {
   return (
     <div className="py-12 px-4 md:px-10 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 min-h-screen">
       {/* Header */}
+      <BackButton className="container mx-auto px-4 pt-6"/>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

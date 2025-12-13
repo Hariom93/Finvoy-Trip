@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaMosque, FaUtensils, FaLandmark, FaUmbrellaBeach, FaMountain, FaCar } from 'react-icons/fa';
 import { HiExternalLink } from 'react-icons/hi';
-
+import { useNavigate } from 'react-router-dom';
+import BackButton from "../components/Backbutton";
+// Inside component:
+ // Change for each page
 const SaudiPage = () => {
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +12,8 @@ const SaudiPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
-
+  const navigate = useNavigate();
+  const destinationName = 'saudi-arabia';
   // Mock API data for Saudi Arabia
   const mockOffers = [
     {
@@ -237,6 +241,7 @@ const SaudiPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sand-50 to-amber-50">
       {/* Hero Section with Saudi Theme */}
+      <BackButton className="container mx-auto px-4 pt-6"/>
       <div className="bg-gradient-to-r from-green-800 via-green-700 to-emerald-800 text-white relative overflow-hidden">
         {/* Arabic Pattern Background */}
         <div className="absolute inset-0 opacity-10">
@@ -466,12 +471,11 @@ const SaudiPage = () => {
                   {/* Action Buttons */}
                   <div className="flex space-x-3">
                     <a
-                      href={offer.bookingLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    onClick={() => navigate(`/detail/${destinationName}/${offer.id}`)}
+                      
                       className="flex-1 bg-gradient-to-r from-green-700 to-emerald-700 text-white text-center py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 flex items-center justify-center hover:from-green-800 hover:to-emerald-800"
                     >
-                      Book Now
+                      Explore Now
                       <HiExternalLink className="ml-2" />
                     </a>
                     <button className="px-5 py-4 border-2 border-amber-500 text-amber-600 rounded-xl font-semibold hover:bg-amber-50 transition-colors">
