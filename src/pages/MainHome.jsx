@@ -30,14 +30,14 @@ import Img2 from "../assets/holidayair.avif";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
 // Airline Logos
-import indigo from "../assets/IndigoLogo.webp";
-import malaysia from "../assets/malaysiaLogo.webp";
-import airindia from "../assets/AirindiaLogo.webp";
-import airexpress from "../assets/AirindiaexpressLogo.webp";
-import airasia from "../assets/AirAsiaLogo.webp";
-import vietjet from "../assets/VietjetthaiLogo.webp";
-import spicejet from "../assets/SpicejetLogo.webp";
-import akasa from "../assets/AkasaLogo.jpg";
+import indigo from "../assets/IndigoLogo_transparent.png";
+import malaysia from "../assets/malaysiaLogo_transparent.png";
+import airindia from "../assets/AirindiaLogo_transparent.png";
+import airexpress from "../assets/AirindiaexpressLogo_transparent.png";
+import airasia from "../assets/AirAsiaLogo_transparent.png";
+import vietjet from "../assets/VietjetthaiLogo_transparent.png";
+import spicejet from "../assets/SpicejetLogo_transparent.png";
+import akasa from "../assets/AkasaLogo_transparent.png";
 
 // Slider Images
 import GatwayImg1 from "../assets/GatwayImg.jpg";
@@ -394,12 +394,11 @@ export default function MainHome() {
               src={logo}
               alt={`Airline ${index + 1}`}
               className="
+              mix-blend-multiply
                 w-full 
                 h-24 md:h-32 
                 object-contain
-                transition-all duration-300
-                hover:scale-110 hover:grayscale-0
-                filter grayscale
+              
               "
             />
           </div>
