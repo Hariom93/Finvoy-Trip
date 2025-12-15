@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTree, FaWater, FaMountain, FaSun, FaCamera, FaCar } from 'react-icons/fa';
 import { HiExternalLink } from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
+import BackButton from "../components/Backbutton";
 
+// Inside component:
+ // Change for each page
 const WesternAmericaPage = () => {
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +13,8 @@ const WesternAmericaPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('popular');
-
+  const navigate = useNavigate();
+  const destinationName = 'Wastern-America';
   // Mock API data for Western Australia
   const mockOffers = [
     {
@@ -217,6 +222,7 @@ const WesternAmericaPage = () => {
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-amber-50 to-emerald-50 flex items-center justify-center">
+            
         <div className="text-center p-8 bg-white rounded-xl shadow-lg">
           <div className="text-red-500 text-4xl mb-4">⚠️</div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">Error Loading Offers</h3>
@@ -235,6 +241,9 @@ const WesternAmericaPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-emerald-50">
       {/* Hero Section */}
+      <div>
+              <BackButton className="container mx-auto px-4 pt-6"/>
+              </div>
       <div className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 text-white">
         <div className="container mx-auto px-4 py-12 lg:py-16">
           <div className="max-w-4xl">
@@ -456,12 +465,10 @@ const WesternAmericaPage = () => {
                   {/* Action Buttons */}
                   <div className="flex space-x-3">
                     <a
-                      href={offer.bookingLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={() => navigate(`/detail/${destinationName}/${offer.id}`)}
                       className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-center py-4 rounded-xl font-bold hover:shadow-lg transition-all duration-300 flex items-center justify-center hover:from-emerald-700 hover:to-teal-700"
                     >
-                      Book Now
+                      Explore Now
                       <HiExternalLink className="ml-2" />
                     </a>
                     <button className="px-5 py-4 border-2 border-amber-500 text-amber-600 rounded-xl font-semibold hover:bg-amber-50 transition-colors">
@@ -516,7 +523,7 @@ const WesternAmericaPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white">
+      {/* <footer className="bg-gray-900 text-white">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -600,7 +607,7 @@ const WesternAmericaPage = () => {
             </p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
