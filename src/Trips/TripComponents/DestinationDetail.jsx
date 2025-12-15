@@ -1,4 +1,3 @@
-// pages/DestinationDetailPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BackButton from "../../components/backbutton";
@@ -23,7 +22,6 @@ import {
   Phone,
   Mail,
   User,
-  Phone as PhoneIcon,
   ChevronRight,
   ChevronLeft,
   Send,
@@ -34,14 +32,185 @@ import {
   BookOpen,
 } from "lucide-react";
 
-// InquiryForm Component remains exactly the same as your code
-const InquiryForm = ({ offerTitle, destination, onClose }) => {
-  // ... (Keep all your InquiryForm code exactly as it is)
-  // I'll show a shortened version below to save space, but keep your original
+// Simple InquiryForm Component
+const SimpleInquiryForm = ({ offerTitle, destination, onClose }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    travelers: '1',
+    travelDate: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      console.log('Form submitted:', { ...formData, offerTitle, destination });
+      setLoading(false);
+      setSubmitted(true);
+      
+      // Reset form and close after 2 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          travelers: '1',
+          travelDate: '',
+          message: ''
+        });
+        onClose();
+      }, 2000);
+    }, 1500);
+  };
 
   return (
-    <div className="animate-fade-in">
-      {/* Your existing InquiryForm JSX */}
+    <div>
+      {submitted ? (
+        <div className="text-center py-8">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-green-600" />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">Inquiry Sent!</h3>
+          <p className="text-gray-600">Our travel expert will contact you within 24 hours.</p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name *
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              placeholder="John Doe"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone Number *
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              placeholder="+91 9876543210"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Travelers
+              </label>
+              <select
+                name="travelers"
+                value={formData.travelers}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              >
+                {[1, 2, 3, 4, 5, 6].map(num => (
+                  <option key={num} value={num}>{num} {num === 1 ? 'Person' : 'People'}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Travel Date
+              </label>
+              <input
+                type="date"
+                name="travelDate"
+                value={formData.travelDate}
+                onChange={handleChange}
+                min={new Date().toISOString().split('T')[0]}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Additional Message (Optional)
+            </label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="3"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+              placeholder="Any specific requirements or questions..."
+            />
+          </div>
+
+          <div className="pt-4">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center"
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                  Sending Inquiry...
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5 mr-2" />
+                  Send Inquiry
+                </>
+              )}
+            </button>
+            
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-full mt-3 py-2.5 text-gray-600 hover:text-gray-800 font-medium"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      )}
     </div>
   );
 };
@@ -54,8 +223,6 @@ const DestinationDetail = () => {
   const [loading, setLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
   const [showInquiryForm, setShowInquiryForm] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState(null);
-  const [showBookNowPopup, setShowBookNowPopup] = useState(false);
 
   // COMPLETE DESTINATIONS DATA - All 8 destinations
   const destinationsData = [
@@ -572,7 +739,7 @@ const DestinationDetail = () => {
 
   // Effect to handle body scroll when popup is open
   useEffect(() => {
-    if (showBookNowPopup || showInquiryForm) {
+    if (showInquiryForm) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
@@ -581,7 +748,7 @@ const DestinationDetail = () => {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [showBookNowPopup, showInquiryForm]);
+  }, [showInquiryForm]);
 
   useEffect(() => {
     // Find destination from the complete list
@@ -595,18 +762,11 @@ const DestinationDetail = () => {
   }, [id]);
 
   const handleBookNow = () => {
-    setShowBookNowPopup(true);
-  };
-
-  const handlePackageSelect = (pkg) => {
-    setSelectedPackage(pkg);
     setShowInquiryForm(true);
   };
 
   const handleClosePopup = () => {
-    setShowBookNowPopup(false);
     setShowInquiryForm(false);
-    setSelectedPackage(null);
   };
 
   if (loading) {
@@ -630,7 +790,7 @@ const DestinationDetail = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Destination Not Found</h2>
           <p className="text-gray-600 mb-6">The destination you're looking for doesn't exist.</p>
           <button 
-            onClick={() => navigate('/destinations')}
+            onClick={() => navigate(-1)}
             className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -642,7 +802,7 @@ const DestinationDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen bg-gray-50 ${(showBookNowPopup || showInquiryForm) ? 'overflow-hidden' : ''}`}>
+    <div className={`min-h-screen bg-gray-50 ${showInquiryForm ? 'overflow-hidden' : ''}`}>
       {/* Back Button */}
       <div className="container mx-auto px-4">
         <BackButton className='container mx-auto px-4 pt-6'/>
@@ -690,10 +850,10 @@ const DestinationDetail = () => {
         <div className="absolute bottom-6 right-3">
           <button
             onClick={handleBookNow}
-            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-5 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-3 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
           >
             <BookOpen className="w-6 h-6" />
-            <span>Book Now</span>
+            <span>Enquiry Now</span>
           </button>
         </div>
       </div>
@@ -759,41 +919,6 @@ const DestinationDetail = () => {
                 ))}
               </div>
             </div>
-
-            {/* Packages Section - Uncomment if needed */}
-            {/* <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Available Packages</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {destination.packages.map((pkg, index) => (
-                  <div key={pkg.id} className="border-2 border-gray-200 rounded-2xl p-6 hover:border-teal-500 transition-all duration-300 hover:shadow-lg">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                      <div className="text-2xl font-bold text-gray-900">{pkg.price}</div>
-                      <div className="flex items-center mt-2 text-gray-600">
-                        <Calendar className="w-5 h-5 mr-2" />
-                        <span>{destination.duration}</span>
-                      </div>
-                    </div>
-                    
-                    <ul className="space-y-2 mb-6">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-600">
-                          <Check className="w-4 h-4 text-green-500 mr-2" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <button
-                      onClick={() => handlePackageSelect(pkg)}
-                      className="w-full bg-gradient-to-r from-teal-600 to-blue-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    >
-                      Get Custom Quote
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div> */}
 
             {/* Inclusions & Exclusions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -862,57 +987,24 @@ const DestinationDetail = () => {
         </div>
       </div>
 
-      {/* Book Now Popup Modal */}
-      {showBookNowPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div 
-            className="fixed inset-0 bg-black/50"
-            onClick={handleClosePopup}
-          />
-          <div className="relative bg-white pb-5 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-scale-in">
-            <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center z-10">
-              <div>
-                <h3 className="text-xl font-bold text-gray-900">
-                  Book Now - {destination.name}
-                </h3>
-                <p className="text-gray-600 text-sm">Complete your booking inquiry</p>
-              </div>
-              <button
-                onClick={handleClosePopup}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <X className="w-6 h-6 text-gray-500" />
-              </button>
-            </div>
-            
-            <div className="p-6">
-              <InquiryForm 
-                offerTitle={`${destination.name} - ${destination.country}`}
-                destination={destination.id}
-                onClose={handleClosePopup}
-              />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Package Inquiry Form Modal */}
+      {/* Inquiry Form Modal */}
       {showInquiryForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
           <div 
-            className="fixed inset-0 bg-black/50"
+            className="fixed inset-0 bg-black/40"
             onClick={handleClosePopup}
           />
-          <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto animate-scale-in">
+          
+          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+            {/* Header */}
             <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center z-10">
               <div>
                 <h3 className="text-xl font-bold text-gray-900">
-                  {selectedPackage 
-                    ? `Inquiry for ${selectedPackage.name} - ${destination.name}`
-                    : `Custom Inquiry for ${destination.name}`
-                  }
+                  Travel Inquiry
                 </h3>
-                <p className="text-gray-600 text-sm">Get personalized pricing and itinerary</p>
+                <p className="text-gray-600 text-sm">
+                  {destination.name}, {destination.country}
+                </p>
               </div>
               <button
                 onClick={handleClosePopup}
@@ -922,9 +1014,10 @@ const DestinationDetail = () => {
               </button>
             </div>
             
-            <div className="p-6">
-              <InquiryForm 
-                offerTitle={`${destination.name} - ${destination.country}${selectedPackage ? ` (${selectedPackage.name})` : ''}`}
+            {/* Form Content */}
+            <div className="p-10">
+              <SimpleInquiryForm 
+                offerTitle={`${destination.name} - ${destination.country}`}
                 destination={destination.id}
                 onClose={handleClosePopup}
               />
