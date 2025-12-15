@@ -22,6 +22,7 @@ import Review from '../Flight/Flightcan';
 import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
 import ExclusiveOffer from "../pages/ExclusiveOffer";
+import ExclusiveOfferDetails from '../pages/ExclusiveOfferDetails';
 import Destinations from '../pages/PopularDestinations/Destinations';
 import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import DestinationDetails from "../pages/PopularDestinations/DestinationDetails";
@@ -56,6 +57,7 @@ const Allroutes = () => {
           <Route path="/destination/:id" element={<DestinationDetail />} />
           <Route path="/destinations/:id" element={<DestinationDetails />} />
           <Route path="/exclusiveoffer" element={<ExclusiveOffer />} />
+          <Route path="/exclusiveofferfdetails/:id" element={<ExclusiveOfferDetails />} />
           <Route path="/detail/:destination/:id" element={<DetailCard />} />
           {/* Holidays */}
           <Route path="/holiday" element={<Holidays />} />
