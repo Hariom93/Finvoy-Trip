@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Star, MapPin, Calendar, Users, ArrowRight, Clock, Tag } from "lucide-react";
 import BackButton from "../components/Backbutton";
+import { useNavigate } from "react-router-dom";
 
 const offerList = [
   {
@@ -100,7 +101,7 @@ const offerList = [
     highlights: ["Alpine Views", "Lake Geneva", "Train Rides", "Cheese Tour"]
   },
   {
-    id: 6,
+    id: 6,  
     title: "Bali Tropical Getaway",
     description: "Tropical paradise with rice terraces, temples, beaches, and cultural performances.",
     code: "BALIMAGIC",
@@ -121,23 +122,21 @@ const offerList = [
 ];
 
 export default function ExclusiveOffer() {
-  const [selectedOffer, setSelectedOffer] = useState(null);
-  const [showDetails, setShowDetails] = useState(false);
+  const navigate = useNavigate();
 
-  const viewDetails = (offer) => {
-    setSelectedOffer(offer);
-    setShowDetails(true);
+  const viewDetails = (offerId) => {
+    navigate(`/offers/${offerId}`);
   };
 
-  const closeDetails = () => {
-    setShowDetails(false);
-    setTimeout(() => setSelectedOffer(null), 300);
+  const bookNow = (offerId, e) => {
+    e.stopPropagation();
+    navigate(`/exclusiveofferfdetails/${offerId}?action=book`);
   };
 
   return (
     <div className="py-12 px-4 md:px-10 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 min-h-screen">
       {/* Header */}
-      <BackButton className="container mx-auto px-4 pt-6"/>
+      <BackButton className="container mx-auto px-4 pt-6" />
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -165,7 +164,8 @@ export default function ExclusiveOffer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ y: -10, transition: { duration: 0.2 } }}
-            className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+            className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
+            onClick={() => viewDetails(offer.id)}
           >
             {/* Offer Badge */}
             <div className="relative">
@@ -184,7 +184,7 @@ export default function ExclusiveOffer() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="p-6" onClick={(e) => e.stopPropagation()}>
               <div className="flex justify-between items-start mb-3">
                 <h2 className="text-xl font-bold text-gray-900">{offer.title}</h2>
                 <div className="flex items-center bg-blue-50 px-2 py-1 rounded">
@@ -250,123 +250,23 @@ export default function ExclusiveOffer() {
               {/* Buttons */}
               <div className="flex gap-3">
                 <button
-                  onClick={() => viewDetails(offer)}
+                  onClick={() => viewDetails(offer.id)}
                   className="flex-1 bg-gradient-to-r from-gray-900 to-gray-700 text-white py-3 px-4 rounded-xl font-semibold hover:opacity-90 transition-all flex items-center justify-center group"
                 >
                   View Details
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
-                <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all">
-                  Book Now
+                <button
+                  onClick={(e) => bookNow(offer.id, e)}
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition-all"
+                >
+                  Enquire now
                 </button>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
-
-      {/* Details Modal */}
-      {selectedOffer && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showDetails ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-          className={`fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 ${showDetails ? 'visible' : 'invisible'}`}
-          onClick={closeDetails}
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: showDetails ? 1 : 0.9, opacity: showDetails ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
-              <img
-                src={selectedOffer.image}
-                alt={selectedOffer.title}
-                className="w-full h-64 md:h-80 object-cover"
-              />
-              <button
-                onClick={closeDetails}
-                className="absolute top-4 right-4 bg-white/90 p-2 rounded-full hover:bg-white transition"
-              >
-                ×
-              </button>
-              <div className="absolute bottom-4 left-4">
-                <div className={`${selectedOffer.bg} text-white px-4 py-2 rounded-full font-bold`}>
-                  {selectedOffer.discount}
-                </div>
-              </div>
-            </div>
-
-            <div className="p-6 md:p-8 overflow-y-auto max-h-[calc(90vh-20rem)]">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">{selectedOffer.title}</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="text-lg font-semibold mb-3">Package Includes:</h3>
-                  <ul className="space-y-2">
-                    {selectedOffer.highlights.map((item, idx) => (
-                      <li key={idx} className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-3">Trip Details:</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Duration:</span>
-                      <span className="font-semibold">{selectedOffer.duration}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Group Size:</span>
-                      <span className="font-semibold">{selectedOffer.groupSize}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Rating:</span>
-                      <span className="font-semibold flex items-center">
-                        <Star className="fill-yellow-400 text-yellow-400 mr-1" size={16} />
-                        {selectedOffer.rating} ({selectedOffer.reviews} reviews)
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Validity:</span>
-                      <span className="font-semibold">{selectedOffer.validity}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl mb-6">
-                <p className="text-gray-700 mb-4">{selectedOffer.description}</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900">{selectedOffer.discountedPrice}</div>
-                    <div className="text-gray-500 line-through">{selectedOffer.originalPrice}</div>
-                  </div>
-                  <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">
-                    <div className="text-sm">Use Code</div>
-                    <div className="text-2xl font-bold font-mono">{selectedOffer.code}</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <button className="flex-1 bg-gradient-to-r from-gray-900 to-gray-700 text-white py-4 rounded-xl font-semibold hover:opacity-90 transition">
-                  Add to Wishlist
-                </button>
-                <button className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-[1.02] transition">
-                  Proceed to Book
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
 
       {/* Footer CTA */}
       <motion.div

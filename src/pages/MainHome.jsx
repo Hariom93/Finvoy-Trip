@@ -25,8 +25,8 @@ import {
 import { HiLocationMarker, HiOutlineUserCircle } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import coinLogo from "../assets/supercoins-chip-icon.webp";
-import Img1 from "../assets/Img1.jpg";
-import Img2 from "../assets/Img2.webp";
+import Img1 from "../assets/air1.jpg";
+import Img2 from "../assets/holidayair.avif";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
 // Airline Logos
