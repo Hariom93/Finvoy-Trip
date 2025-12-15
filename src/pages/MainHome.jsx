@@ -74,60 +74,67 @@ export default function MainHome() {
   ];
 
   const popularDestinations = [
-    // Delhi - India's Capital  q
+    // Delhi
     { 
-      city: 'Delhi', 
-      code: 'DEL', 
-      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'India Gate',
-      country: 'India'
+      id: "delhi",   // ✅ added ID
+      city: "Delhi",
+      code: "DEL",
+      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "India Gate",
+      country: "India"
     },
-    
-    // Mumbai - Financial Capital
+  
+    // Mumbai
     { 
-      city: 'Mumbai', 
-      code: 'BOM', 
-      image: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Chhatrapati Shivaji Terminus',
-      country: 'India'
+      id: "mumbai",  // ✅ added ID
+      city: "Mumbai",
+      code: "BOM",
+      image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Chhatrapati Shivaji Terminus",
+      country: "India"
     },
-    
-    // Bangalore - IT Hub
+  
+    // Bangalore
     { 
-      city: 'Bangalore', 
-      code: 'BLR', 
-      image: 'https://media.istockphoto.com/id/2224221889/photo/beautiful-view-of-bangalore-skyline-cityscape-at-the-night.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVsHeF5XPJ_1XB2H6dclrDDHpR2Nlr6xncdeQD7JByI=',
-      landmark: 'Vidhana Soudha',
-      country: 'India'
+      id: "bangalore", // ✅ added ID
+      city: "Bangalore",
+      code: "BLR",
+      image: "https://media.istockphoto.com/id/2224221889/photo/beautiful-view-of-bangalore-skyline-cityscape-at-the-night.webp?a=1&b=1&s=612x612&w=0&k=20&c=RVsHeF5XPJ_1XB2H6dclrDDHpR2Nlr6xncdeQD7JByI=",
+      landmark: "Vidhana Soudha",
+      country: "India"
     },
-    
-    // Goa - Beach Paradise
+  
+    // Goa
     { 
-      city: 'Goa', 
-      code: 'GOI', 
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Baga Beach',
-      country: 'India'
+      id: "goa",  // ✅ added ID
+      city: "Goa",
+      code: "GOI",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Baga Beach",
+      country: "India"
     },
-    
-    // Dubai - Modern Metropolis
+  
+    // Dubai
     { 
-      city: 'Dubai', 
-      code: 'DXB', 
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Burj Khalifa',
-      country: 'UAE'
+      id: "dubai", // ✅ added ID
+      city: "Dubai",
+      code: "DXB",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Burj Khalifa",
+      country: "UAE"
     },
-    
-    // Singapore - Garden City
+  
+    // Singapore
     { 
-      city: 'Singapore', 
-      code: 'SIN', 
-      image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      landmark: 'Marina Bay Sands',
-      country: 'Singapore'
+      id: "singapore", // ✅ added ID
+      city: "Singapore",
+      code: "SIN",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      landmark: "Marina Bay Sands",
+      country: "Singapore"
     },
   ];
+  
 
   const trendingHotels = [
     {
@@ -224,7 +231,6 @@ export default function MainHome() {
     if (diff < -50) prevSlide();
     setStartX(null);
   };
-
   return (
     <div className="min-h-screen bg-gray-50 ">
       {/* Header */}
@@ -234,7 +240,6 @@ export default function MainHome() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <img src={logo} alt="Cleartrip Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
-              <h1 className="text-2xl font-bold text-gray-900 hidden md:block">Finvoy-Trip</h1>
             </div>
 
             {/* Super Coins */}
@@ -342,6 +347,7 @@ export default function MainHome() {
               {popularDestinations.map((dest, index) => (
                 <div
                   key={index}
+                  onClick={() => navigate(`/destinations/${dest.id}`)}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group"
                 >
                   <div className="relative h-32 md:h-40 overflow-hidden">
@@ -403,9 +409,6 @@ export default function MainHome() {
     </div>
   </div>
 </section>
-
-
-
         {/* Slider Section */}
         <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
@@ -496,7 +499,9 @@ export default function MainHome() {
                   <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 inline-block">
                     <p className="font-mono font-bold text-xs md:text-sm">Use Code: {offer.code}</p>
                   </div>
-                  <button className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full">
+                  <button
+                     onClick={() => navigate("/exclusiveoffer")}
+                  className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full">
                     Explore Now
                   </button>
                 </div>
