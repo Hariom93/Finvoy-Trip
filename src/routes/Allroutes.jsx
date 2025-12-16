@@ -62,7 +62,7 @@ const Allroutes = () => {
           <Route path="/exclusiveofferfdetails/:id" element={<ExclusiveOfferDetails />} />
           <Route path="/detail/:destination/:id" element={<DetailCard />} />
           {/* Holidays */}
-          <Route path="/holiday" element={<Holidays />} />
+          <Route path="/holidays" element={<Holidays />} />
           <Route path="/holiday/:id" element={<HolidaysDetails />} />
 
           {/* Main */}
