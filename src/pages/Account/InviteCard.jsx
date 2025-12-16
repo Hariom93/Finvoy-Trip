@@ -27,7 +27,7 @@ import {
   Hotel,
   Car
 } from 'lucide-react';
-import BackButton from "../../components/backbutton"; 
+import BackButton from "../../components/Backbutton"; 
 
 const InviteCard = () => {
   const [loading, setLoading] = useState(true);
