@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import BackButton from "../../components/backbutton";
+import BackButton from "../../components/Backbutton";
 
 import {
   ArrowLeft,
