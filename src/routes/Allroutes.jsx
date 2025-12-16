@@ -4,7 +4,7 @@ import React from 'react';
 import MainHome from '../pages/MainHome';
 import MyTrips from "../pages/account/MyTrips";
 import FinvoyTripWallet from "../pages/account/FinvoyTripWallet";
-import Offers from "../pages/Offers";
+import Offers from "../pages/Offers.jsx";
 import PackagePage from "../pages/PackagePage";
 import InviteCard from "../pages/account/InviteCard";
 import Work from "../pages/Work";
@@ -42,7 +42,7 @@ const Allroutes = () => {
   return (
     <>
       <ScrollToTop />
-      <div className="pb-16">
+      <div>
         <Routes>
 
           {/* Popular Destination Pages
@@ -54,6 +54,8 @@ const Allroutes = () => {
           <Route path="/populardestinationss/bangalore" element={<Bangalore />} /> */}
 
           {/* Dynamic Destination Detail */}
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/destination/:id" element={<DestinationDetail />} />
           <Route path="/destinations/:id" element={<DestinationDetails />} />
           <Route path="/exclusiveoffer" element={<ExclusiveOffer />} />

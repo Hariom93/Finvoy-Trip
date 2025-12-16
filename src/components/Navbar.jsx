@@ -3,32 +3,40 @@ import { FaHome, FaSuitcase, FaTag, FaUserCircle, FaBriefcase } from "react-icon
 
 export default function Navbar() {
   const menuItems = [
-    { path: "/", label: "Home", icon: <FaHome className="text-lg mb-1" /> },
-    { path: "/account/mytrips", label: "My Trips", icon: <FaSuitcase className="text-lg mb-1" /> },
-    { path: "/offers", label: "Offers", icon: <FaTag className="text-lg mb-1" /> },
-    { path: "/account", label: "Account", icon: <FaUserCircle className="text-lg mb-1" /> },
-    { path: "/work", label: "Work", icon: <FaBriefcase className="text-lg mb-1" /> },
+    { path: "/", label: "Home", icon: FaHome },
+    { path: "/account/mytrips", label: "My Trips", icon: FaSuitcase },
+    { path: "/offers", label: "Offers", icon: FaTag },
+    { path: "/account", label: "Account", icon: FaUserCircle },
+    { path: "/work", label: "Work", icon: FaBriefcase },
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-black text-white border-t border-gray-800 z-50">
-      <div className="flex justify-around items-center py-4">
-
-        {menuItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `flex flex-col items-center text-xs ${
-                isActive ? "text-white" : "text-gray-400"
-              }`
-            }
-          >
-            {item.icon}
-            <span className="text-[11px]">{item.label}</span>
-          </NavLink>
-        ))}
-
+    // Hide on desktop (1180px and above), show on mobile/tablet
+    <div className="lg:hidden fixed bottom-0 left-0 w-full bg-black text-white border-t border-gray-800 z-50">
+      <div className="flex justify-around items-center py-3">
+        {menuItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                `flex flex-col items-center text-xs transition-colors duration-200 ${
+                  isActive ? "text-white" : "text-gray-400 hover:text-gray-300"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <div className={`p-2 rounded-lg mb-1 ${isActive ? "bg-gray-800" : ""}`}>
+                    <Icon className="text-lg" />
+                  </div>
+                  <span className="text-[11px]">{item.label}</span>
+                </>
+              )}
+            </NavLink>
+          );
+        })}
       </div>
     </div>
   );

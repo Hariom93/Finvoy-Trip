@@ -176,7 +176,7 @@ const HolidayDetails = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Destination Not Found</h2>
           <p className="text-gray-600 mb-6">The destination you're looking for doesn't exist.</p>
           <button 
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/holiday')}
             className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2"
           >
             <ArrowLeft className="w-5 h-5" />
