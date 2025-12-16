@@ -20,7 +20,7 @@ import {
   Camera,
   Sparkles
 } from 'lucide-react';
-import BackButton from "../components/BackButton.jsx";
+import BackButton from "../components/BackButton";
 const DestinationsPage = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
