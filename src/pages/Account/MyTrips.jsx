@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackButton from "../../components/Backbutton"; 
+import BackButton from "../../components/BackButton";
 
 export default function MyTrips() {
   const navigate = useNavigate();

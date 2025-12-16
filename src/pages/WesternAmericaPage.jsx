@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTree, FaWater, FaMountain, FaSun, FaCamera, FaCar } from 'react-icons/fa';
 import { HiExternalLink } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
-import BackButton from "../components/Backbutton";
+import BackButton from "../components/BackButton";
 
 // Inside component:
  // Change for each page
