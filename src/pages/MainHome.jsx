@@ -28,7 +28,8 @@ import coinLogo from "../assets/supercoins-chip-icon.webp";
 import Img1 from "../assets/air1.jpg";
 import Img2 from "../assets/holidayair.avif";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 // Airline Logos
 import indigo from "../assets/IndigoLogo_transparent.png";
 import malaysia from "../assets/malaysiaLogo_transparent.png";
@@ -52,6 +53,14 @@ export default function MainHome() {
   const [tripType, setTripType] = useState('round');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [showPopup, setShowPopup] = useState(false);
+  const [ismobilpop,setismobilpop]=useState(false)
+
+  // Lock body scroll when popup open
+  useEffect(() => {
+    document.body.style.overflow = showPopup ? "hidden" : "auto";
+  }, [showPopup]);
+
 
   const airlines = [indigo, malaysia, airindia, airexpress, airasia, vietjet, spicejet, akasa];
 
@@ -247,12 +256,217 @@ export default function MainHome() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">My Trips</a>
+              <a href="/account" className="text-gray-600 hover:text-blue-600 font-medium">Account</a>
+              <a href="/offers" className="text-gray-600 hover:text-blue-600 font-medium">Offers</a>
+              <a href="/work" className="text-gray-600 hover:text-blue-600 font-medium">Work</a>
               <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">Support</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 font-medium">Blog</a>
-              <button className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">
+              <button 
+              onClick={() => setShowPopup(true)}
+              className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors">
                 <HiOutlineUserCircle className="text-gray-600 text-xl" />
                 <span className="font-medium">Login / Sign up</span>
               </button>
+              {showPopup && (
+  <AnimatePresence>
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {/* BACKDROP */}
+      <motion.div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={() => setShowPopup(false)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      />
+
+      {/* POPUP CARD - ADJUSTED FOR 1180PX */}
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0, y: 10 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.95, opacity: 0, y: 10 }}
+        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-[500px] overflow-hidden z-10 mx-auto"
+        style={{ maxHeight: "90vh", overflowY: "auto" }}
+      >
+        {/* HEADER */}
+        <div className="bg-gradient-to-r from-blue-600 to-emerald-500 px-5 py-4 sticky top-0 z-10">
+          <div className="flex items-center justify-between">
+            <div className="pr-4">
+              <h2 className="text-lg font-bold text-white">Travel Inquiry</h2>
+              <p className="text-blue-100 text-xs mt-0.5">
+                Let us help plan your perfect trip
+              </p>
+            </div>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="flex-shrink-0 w-7 h-7 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              aria-label="Close"
+            >
+              <X size={16} className="text-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* FORM */}
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            // Handle form submission here
+            console.log("Form submitted");
+            setShowPopup(false);
+          }} 
+          className="p-5"
+        >
+          <div className="space-y-3.5">
+            {/* COMPACT FORM FIELDS */}
+            <div className="grid grid-cols-1 gap-3.5">
+              {/* NAME FIELD */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              {/* EMAIL FIELD */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  required
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              {/* PHONE FIELD */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  placeholder="+1 (555) 123-4567"
+                />
+              </div>
+            </div>
+
+            {/* COMPACT DATE PICKERS */}
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Start Date
+                </label>
+                <input
+                  type="date"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  End Date
+                </label>
+                <input
+                  type="date"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                />
+              </div>
+            </div>
+
+            {/* MESSAGE FIELD - COMPACT */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Your Message *
+              </label>
+              <textarea
+                rows="3"
+                required
+                className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                placeholder="Tell us about your travel plans..."
+              />
+            </div>
+
+            {/* COMPACT TRAVEL TYPE */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Travel Type
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {['Leisure', 'Business', 'Family', 'Adventure'].map((type) => (
+                  <label key={type} className="inline-flex items-center space-x-1.5 cursor-pointer px-2.5 py-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                    <input
+                      type="radio"
+                      name="travelType"
+                      value={type.toLowerCase()}
+                      className="text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="text-xs font-medium text-gray-700">{type}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* COMPACT BUDGET FIELD */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Estimated Budget
+              </label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">$</span>
+                <input
+                  type="number"
+                  min="0"
+                  className="w-full pl-8 pr-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                  placeholder="5000"
+                />
+              </div>
+            </div>
+
+            {/* TRAVELERS SELECT */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Number of Travelers
+              </label>
+              <select className="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                <option value="">Select number</option>
+                <option value="1">1 Traveler</option>
+                <option value="2">2 Travelers</option>
+                <option value="3">3 Travelers</option>
+                <option value="4">4 Travelers</option>
+                <option value="5+">5+ Travelers</option>
+              </select>
+            </div>
+
+            {/* SUBMIT BUTTON - COMPACT */}
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-semibold text-sm py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg mt-2"
+            >
+              Submit Inquiry
+            </button>
+
+            {/* FOOTER TEXT - COMPACT */}
+            <p className="text-center text-xs text-gray-500 pt-1.5">
+              We respect your privacy. Your information will never be shared.
+            </p>
+          </div>
+        </form>
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
+)}
             </nav>
 
             {/* Mobile Menu Button */}
@@ -271,10 +485,13 @@ export default function MainHome() {
                 <a href="#" className="text-gray-600 hover:text-blue-600 font-medium py-2">My Trips</a>
                 <a href="#" className="text-gray-600 hover:text-blue-600 font-medium py-2">Support</a>
                 <a href="#" className="text-gray-600 hover:text-blue-600 font-medium py-2">Blog</a>
-                <button className="flex items-center space-x-2 bg-gray-100 px-4 py-3 rounded-lg w-full justify-center">
+                <button
+                
+                className="flex items-center space-x-2 bg-gray-100 px-4 py-3 rounded-lg w-full justify-center">
                   <HiOutlineUserCircle className="text-gray-600 text-xl" />
                   <span className="font-medium">Login / Sign up</span>
                 </button>
+
               </div>
             </div>
           )}
@@ -532,7 +749,7 @@ export default function MainHome() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white pt-8 md:pt-12 pb-6 md:pb-8">
+      <footer className="bg-gray-900 text-white pt-8 md:pt-12 ">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 mb-8 md:mb-10">
             {/* Company Info */}
