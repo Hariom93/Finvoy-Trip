@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, MapPin, Calendar, Users, ArrowRight, Clock, Tag } from "lucide-react";
-import BackButton from "../components/Backbutton";
+import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
 
 const offerList = [
