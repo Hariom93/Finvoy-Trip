@@ -2,7 +2,7 @@ import HolidaysDetails from "../pages/HolidaysDetails";
 import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
-import MyTrips from "../pages/account/MyTrips";
+import MyTrips from "../pages/Account/MyTrips";
 import FinvoyTripWallet from "../pages/account/FinvoyTripWallet";
 import Offers from "../pages/Offers.jsx";
 import PackagePage from "../pages/PackagePage";
