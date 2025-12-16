@@ -205,7 +205,7 @@ export default function MainHome() {
 
   const travelBoxes = [
     { img: Img1, name: "Flights", text: "Up to 25% off", link: "/flight" },
-    { img: Img2, name: "Holidays", text: "Plan your trip", link: "/holiday" }
+    { img: Img2, name: "Holidays", text: "Plan your trip", link: "/holidays" }
   ];
 
   useEffect(() => {
