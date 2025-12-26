@@ -334,7 +334,7 @@ const popularDestinations = [
     ]
   }
 ];
-import BackButton from "../../components/Backbutton";
+import BackButton from "../../components/BackButton";
 // ⭐ Enhanced Inquiry Form Component
 const InquiryForm = ({ destination, onClose }) => {
   const [formData, setFormData] = useState({
