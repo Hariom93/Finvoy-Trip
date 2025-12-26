@@ -29,7 +29,6 @@ import {
 } from 'lucide-react';
 import BackButton from "../../components/BackButton";
 
-
 const InviteCard = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('all');
@@ -205,7 +204,7 @@ const InviteCard = () => {
                 <Trophy className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-800">Cleartrip <span className="bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">Hi-Five</span></h1>
+                <h1 className="text-xl font-bold text-gray-800">Finvoy-Gobal <span className="bg-gradient-to-r from-yellow-500 to-amber-600 bg-clip-text text-transparent">Hi-Five</span></h1>
                 <p className="text-gray-500 text-sm">Your Rewards & Loyalty Program</p>
               </div>
             </div>
@@ -535,7 +534,7 @@ const InviteCard = () => {
             <div>
               <h2 className="text-2xl font-bold mb-3">Invite Friends, Earn Together</h2>
               <p className="text-purple-100 mb-6">
-                Share your referral code and earn 500 points for each friend who joins Cleartrip Hi-Five
+                Share your referral code and earn 500 points for each friend who joins Finvoy-Gobal Hi-Five
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between">
@@ -636,13 +635,13 @@ const InviteCard = () => {
                 <Trophy className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">Cleartrip Hi-Five</h3>
+                <h3 className="text-lg font-bold">Finvoy-Gobal Hi-Five</h3>
                 <p className="text-gray-400 text-sm">Rewards that travel with you</p>
               </div>
             </div>
             
             <div className="text-center">
-              <p className="text-gray-400">© 2025 Cleartrip Hi-Five Rewards Program</p>
+              <p className="text-gray-400">© 2025 Finvoy-Gobal Hi-Five Rewards Program</p>
               <p className="text-gray-500 text-sm mt-1">Terms & Conditions apply</p>
             </div>
             

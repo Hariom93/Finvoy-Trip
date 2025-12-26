@@ -1,6 +1,8 @@
 // pages/DestinationsPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from "framer-motion";
+
 import {
   Search,
   MapPin,
@@ -36,7 +38,7 @@ const DestinationsPage = () => {
     const timer = setTimeout(() => {
       setDestinations(destinationsData);
       setLoading(false);
-    }, 1500);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -422,7 +424,7 @@ const DestinationsPage = () => {
 
         {/* Why Choose Us */}
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 border border-blue-200">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Why Choose Finvoy-Trip?</h2>
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Why Choose Finvoy-Gobal?</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -457,6 +459,19 @@ const DestinationsPage = () => {
             </div>
           </div>
         </div>
+        {/* adding floting up button */}
+        <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-25 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+        </svg>
+      </motion.button>
       </main>
     </div>
   );

@@ -11,14 +11,15 @@ import {
   FaSignOutAlt,
   FaShieldAlt
 } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,  } from "framer-motion";
+import BackButton from "../../components/BackButton";
 
 export default function Account() {
   const navigate = useNavigate();
 
   const menuList = [
     { title: "My Trips", icon: <FaSuitcase />, path: "/account/mytrips" },
-    { title: "Cleartrip Wallet", icon: <FaWallet />, path: "/account/finvoytripwallet", right: "₹0" },
+    { title: "Finvoy-Global Wallet", icon: <FaWallet />, path: "/account/finvoytripwallet", right: "₹0" },
     { title: "Bus Pass", icon: <FaTicketAlt />, path: "/account/buspass" },
     { title: "Saved Payment Modes", icon: <FaCreditCard />, path: "/account/savepayment" },
     { title: "Invite and Earn", icon: <FaGift />, path: "/account/invitecard", badge: "₹350 per month" },
@@ -69,8 +70,9 @@ export default function Account() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 pt-4 pb-14"> {/* Added pb-24 for bottom padding */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 pt-10 pb-14"> {/* Added pb-24 for bottom padding */}
       {/* User Section with Animation */}
+      <BackButton className="container mx-auto px-4 pt-6"/>
       <motion.div 
         className="mb-8"
         initial="hidden"

@@ -29,7 +29,11 @@ import DestinationDetails from "../pages/PopularDestinations/DestinationDetails"
 import DetailCard from '../pages/Getawayspage/DetailCard';
 import Account from "../pages/Account/Account";
 import TravellerDetails from "../Flight/travellerDetail";
-
+import Hotels from '../pages/Bookings/Hotels.jsx'
+import HotelsDetails from '../pages/Bookings/HotelsDetails.jsx'
+import Taxi from '../pages/Bookings/Taxi.jsx'
+import TaxiDetails from '../pages/Bookings/TaxiDetails.jsx'
+import Login from "../pages/Auth/Login.jsx";
 // import Dehlii from "../PopularDestinationss/Dehlii.jsx";
 // import Dubai from "../PopularDestinationss/Dubai.jsx";
 // import Singapore from "../PopularDestinationss/Singapore.jsx";
@@ -52,8 +56,15 @@ const Allroutes = () => {
           <Route path="/populardestinationss/goa" element={<Goa />} />
           <Route path="/populardestinationss/mumbai" element={<Mumbai />} />
           <Route path="/populardestinationss/bangalore" element={<Bangalore />} /> */}
-
+          <Route path="/login" element={<Login />} />
           {/* Dynamic Destination Detail */}
+          <Route path="/hotal" element={<Hotels />} />
+          
+          <Route path="/hotel/:id" element={<HotelsDetails/>} />
+
+          <Route path="/taxi" element={<Taxi />} />
+          <Route path="/taxi/:id" element={<TaxiDetails />} />
+
           <Route path="/offers" element={<Offers />} />
           <Route path="/work" element={<Work />} />
           <Route path="/destination/:id" element={<DestinationDetail />} />
@@ -63,7 +74,7 @@ const Allroutes = () => {
           <Route path="/detail/:destination/:id" element={<DetailCard />} />
           {/* Holidays */}
           <Route path="/holidays" element={<Holidays />} />
-          <Route path="/holiday/:id" element={<HolidaysDetails />} />
+          <Route path="/holidays/:id" element={<HolidaysDetails />} />
 
           {/* Main */}
           <Route path="/" element={<MainHome />} />
