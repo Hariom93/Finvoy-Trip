@@ -7,7 +7,7 @@ export default function Navbar() {
     { path: "/account/mytrips", label: "My Trips", icon: FaSuitcase },
     { path: "/offers", label: "Offers", icon: FaTag },
     { path: "/account", label: "Account", icon: FaUserCircle },
-    { path: "/work", label: "Work", icon: FaBriefcase },
+    { path: "/work", label: "About Us", icon: FaBriefcase },
   ];
 
   return (

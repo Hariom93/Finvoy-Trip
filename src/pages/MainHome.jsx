@@ -3,6 +3,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { IoLogoWhatsapp } from "react-icons/io";
 import packages from "../Data/packagesData";
 import {
+  ChevronLeft,
+  ChevronRight,
+  Plane,
+  Car,
+  MapPin,
+  Sun,
+  Hotel,
+  Navigation,
+} from "lucide-react";
+import {
   FaSearch,
   FaPlane,
   FaHotel,
@@ -76,6 +86,78 @@ export default function MainHome() {
     spicejet,
     akasa,
   ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+
+  const slides = [
+    {
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Air Travel",
+      subtitle: "Fly to your dream destinations",
+      icon: <Plane className="w-8 h-8 text-white" />,
+      category: "air",
+    },
+    {
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Taxi Services",
+      subtitle: "Reliable rides anywhere, anytime",
+      icon: <Car className="w-8 h-8 text-white" />,
+      category: "taxi",
+    },
+    {
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Holidays",
+      subtitle: "Perfect getaways for every season",
+      icon: <Sun className="w-8 h-8 text-white" />,
+      category: "holidays",
+    },
+    {
+      id: 4,
+      image:
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Hotel Stays",
+      subtitle: "Luxurious accommodations worldwide",
+      icon: <Hotel className="w-8 h-8 text-white" />,
+      category: "hotels",
+    },
+    {
+      id: 5,
+      image:
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Travel Guides",
+      subtitle: "Expert recommendations & tips",
+      icon: <Navigation className="w-8 h-8 text-white" />,
+      category: "guides",
+    },
+  ];
+
+  useEffect(() => {
+    if (!autoplay) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [autoplay, slides.length]);
+
+  const nextSlidee = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlidee = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   const images = [
     {
@@ -362,22 +444,20 @@ export default function MainHome() {
               >
                 About Us
               </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-blue-600 font-medium"
-              >
-                Support
-              </a>
+
               <button
                 onClick={() => setShowPopup(false)}
                 className="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors"
               >
                 <HiOutlineUserCircle className="text-gray-600 text-xl" />
-                <p 
-                 onClick={()=>{
-                  navigate('/login')
-                 }}
-                className="font-medium">Login/Sign up</p>
+                <p
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                  className="font-medium"
+                >
+                  Login/Sign up
+                </p>
               </button>
               {showPopup && (
                 <AnimatePresence>
@@ -610,51 +690,50 @@ export default function MainHome() {
             </button>
           </div>
 
-       {/* Mobile Menu */}
-       <div
-  className={`md:hidden w-full absolute top-full left-0 bg-white border-t border-gray-200 px-4 shadow-lg z-50
+          {/* Mobile Menu */}
+          <div
+            className={`md:hidden w-full absolute top-full left-0 bg-white border-t border-gray-200 px-4 shadow-lg z-50
   transition-all duration-400 ease-in-out
   ${
     isMobileMenuOpen
       ? "opacity-100 translate-y-0 visible"
       : "opacity-0 -translate-y-4 invisible"
   }`}
->
-  <div className="flex flex-col space-y-4 py-4">
-    <a
-      href="#"
-      className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
-    >
-      Holidays
-    </a>
+          >
+            <div className="flex flex-col space-y-4 py-4">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Holidays
+              </a>
 
-    <a
-      href="#"
-      className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
-    >
-      Support
-    </a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Support
+              </a>
 
-    <a
-      href="#"
-      className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
-    >
-      Blog
-    </a>
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-600 font-medium py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Blog
+              </a>
 
-    <button
-      onClick={() => {
-        setIsMobileMenuOpen(false);
-        navigate("/login");
-      }}
-      className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-3 rounded-lg w-full justify-center hover:bg-blue-700 transition-all duration-200"
-    >
-      <HiOutlineUserCircle className="text-xl" />
-      <span className="font-medium">Login / Sign up</span>
-    </button>
-  </div>
-</div>
-
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  navigate("/login");
+                }}
+                className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-3 rounded-lg w-full justify-center hover:bg-blue-700 transition-all duration-200"
+              >
+                <HiOutlineUserCircle className="text-xl" />
+                <span className="font-medium">Login / Sign up</span>
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -685,9 +764,192 @@ export default function MainHome() {
             </div>
           </div>
         )}
+        <section className="py-12 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Explore Travel Options
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Discover the best in air travel, taxi services, holiday
+                packages, and more. Your perfect journey starts here.
+              </p>
+            </div>
 
+            {/* Slider Container */}
+            <div className="relative">
+              {/* Main Slider */}
+              <div className="relative h-[150px] sm:h-[220px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <img
+                      src={slides[currentSlide].image}
+                      alt={slides[currentSlide].title}
+                      className="w-full h-full object-cover"
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${slides[currentSlide].color} opacity-80`}
+                    />
+
+                    {/* Content */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
+                      <div className="max-w-2xl">
+                        <div className="flex items-center space-x-4 mb-4">
+                          <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
+                            {slides[currentSlide].icon}
+                          </div>
+                          <span className="px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                            {slides[currentSlide].category.toUpperCase()}
+                          </span>
+                        </div>
+
+                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+                          {slides[currentSlide].title}
+                        </h3>
+
+                        <p className="text-xl text-white/90 mb-6 max-w-lg">
+                          {slides[currentSlide].subtitle}
+                        </p>
+
+                        <button className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 flex items-center space-x-2">
+                          <MapPin className="w-5 h-5" />
+                          <span
+                            onClick={() => {
+                              navigate("/login");
+                            }}
+                          >
+                            Book Now
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={prevSlidee}
+                  onMouseEnter={() => setAutoplay(false)}
+                  onMouseLeave={() => setAutoplay(true)}
+                  className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+
+                <button
+                  onClick={nextSlidee}
+                  onMouseEnter={() => setAutoplay(false)}
+                  onMouseLeave={() => setAutoplay(true)}
+                  className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+
+                {/* Autoplay Toggle */}
+                <button
+                  onClick={() => setAutoplay(!autoplay)}
+                  className="absolute top-4 right-4 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm hover:bg-white/30 transition-colors duration-300"
+                >
+                  {autoplay ? "Pause" : "Play"} Autoplay
+                </button>
+              </div>
+
+              {/* Thumbnail Slider */}
+              {/* <div className="mt-6 flex justify-center space-x-3">
+                {slides.map((slide, index) => (
+                  <button
+                    key={slide.id}
+                    onClick={() => goToSlide(index)}
+                    onMouseEnter={() => setAutoplay(false)}
+                    onMouseLeave={() => setAutoplay(true)}
+                    className={`relative w-20 h-16 md:w-24 md:h-20 rounded-lg overflow-hidden transition-all duration-300 ${
+                      currentSlide === index
+                        ? "ring-2 ring-blue-500 ring-offset-2 scale-110"
+                        : "opacity-70 hover:opacity-100 hover:scale-105"
+                    }`}
+                  >
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${slide.color} opacity-60`}
+                    />
+
+                    
+                    <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
+                      <div
+                        className={`w-8 h-1 rounded-full ${
+                          currentSlide === index ? "bg-white" : "bg-white/50"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                ))}
+              </div> */}
+
+              {/* Slide Indicators */}
+              <div className="flex justify-center space-x-2 mt-6">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    onMouseEnter={() => setAutoplay(false)}
+                    onMouseLeave={() => setAutoplay(true)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      currentSlide === index
+                        ? "bg-blue-600 w-8"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Stats/Features Below Slider */}
+            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+              <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">
+                  500+
+                </div>
+                <div className="text-gray-700 font-medium">Destinations</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">
+                  24/7
+                </div>
+                <div className="text-gray-700 font-medium">Taxi Service</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-orange-50 to-white p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">
+                  1000+
+                </div>
+                <div className="text-gray-700 font-medium">Hotels</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">
+                  50K+
+                </div>
+                <div className="text-gray-700 font-medium">Happy Travelers</div>
+              </div>
+            </div> */}
+          </div>
+        </section>
         {/* Quick Travel Boxes */}
-        <section className="py-8 md:py-12">
+        <section className="py-8 transition-all duration-300 md:py-12">
           <div className="container mx-auto px-4 ">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
               Quick Bookings
@@ -697,22 +959,41 @@ export default function MainHome() {
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-300 ease-out lg:grid-cols-4 gap-4 md:gap-6">
               {travelBoxes.map((item, index) => (
                 <NavLink key={index} to={item.link}>
-                  <div className="group bg-white rounded-xl md:rounded-2xl  p-4 md:p-6 hover:shadow-2xl transition-all duration-300 text-center hover:-translate-y-1 border border-gray-100">
+                  <div
+                    className="group bg-white rounded-xl md:rounded-2xl p-4 md:p-6 text-center 
+                         border border-gray-100
+                         transition-all duration-500 ease-out
+                         hover:-translate-y-2 hover:scale-[1.03]
+                         hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+                         hover:border-blue-200
+                         hover:bg-gradient-to-b hover:from-white hover:to-blue-50"
+                  >
                     {/* Image */}
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full flex items-center justify-center group-hover:scale-110 hover:transition-transform duration-300">
+                    <div
+                      className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 
+                      rounded-full flex items-center justify-center
+                      transition-transform duration-500 ease-out
+                      group-hover:scale-110 group-hover:-translate-y-1"
+                    >
                       <img
                         src={item.img}
                         alt={item.name}
-                        className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full"
+                        className="w-full h-full object-cover rounded-full"
                       />
                     </div>
 
                     {/* Text */}
-                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
+                    <h3
+                      className="text-base md:text-lg font-bold text-gray-900 mb-1 
+                      transition-colors duration-300 group-hover:text-blue-600"
+                    >
                       {item.name}
                     </h3>
 
-                    <p className="text-blue-600 font-semibold text-sm md:text-base">
+                    <p
+                      className="text-blue-600 font-semibold text-sm md:text-base 
+                     transition-opacity duration-300 group-hover:opacity-90"
+                    >
                       {item.text}
                     </p>
                   </div>

@@ -7,7 +7,7 @@ import {
   Plane, Home, Utensils, Wifi, Car,
   X, Send, Loader2, CheckCircle, User, Phone, Mail
 } from "lucide-react";
-import BackButton from "../components/Backbutton";
+import BackButton from "../components/BackButton.jsx";
 
 // ⭐ Simple Inquiry Form Component
 const InquiryForm = ({ offer, onClose }) => {
