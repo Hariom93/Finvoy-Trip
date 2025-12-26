@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch, FiChevronRight, FiCopy, FiTag, FiClock, FiPercent } from "react-icons/fi";
+import BackButton from "../components/BackButton";
 
 export default function Offers() {
   const navigate = useNavigate();
@@ -108,9 +109,11 @@ export default function Offers() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 pb-18 via-white to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 pb-18 pt-10 via-white to-blue-50/30">
       {/* Top Navigation Bar */}
-      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+      <BackButton className="container mx-auto px-4 pt-6"/>
+
+      <div className=" top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>

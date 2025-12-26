@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import BackButton from "../components/BackButton";
+
 import { 
   FiSearch, 
   FiCalendar, 
@@ -160,8 +162,9 @@ export default function Work() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 pb-18 via-white to-blue-50/20">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 pb-18  via-white to-blue-50/20">
       {/* Hero Section */}
+      <BackButton className="container mx-auto px-4 pt-6"/>
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -174,7 +177,7 @@ export default function Work() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 pt-3"
             >
               Finvoy-Trip Flight Platform
             </motion.h1>
@@ -439,7 +442,7 @@ export default function Work() {
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40 flex items-center justify-center"
+        className="fixed bottom-22 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40 flex items-center justify-center"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
