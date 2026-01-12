@@ -803,23 +803,11 @@ export default function MainHome() {
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
                       <div className="max-w-2xl">
-                        <div className="flex items-center space-x-4 mb-4">
-                          <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
-                            {slides[currentSlide].icon}
-                          </div>
+                        <div className="flex items-center space-x-4 mb-4"> 
                           <span className="px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
                             {slides[currentSlide].category.toUpperCase()}
                           </span>
                         </div>
-
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                          {slides[currentSlide].title}
-                        </h3>
-
-                        <p className="text-xl text-white/90 mb-6 max-w-lg">
-                          {slides[currentSlide].subtitle}
-                        </p>
-
                         <button className="px-6 py-3 bg-white text-gray-800 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 flex items-center space-x-2">
                           <MapPin className="w-5 h-5" />
                           <span
