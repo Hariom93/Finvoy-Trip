@@ -886,22 +886,6 @@ export default function MainHome() {
                 ))}
               </div> */}
 
-              {/* Slide Indicators */}
-              <div className="flex justify-center space-x-2 mt-6">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    onMouseEnter={() => setAutoplay(false)}
-                    onMouseLeave={() => setAutoplay(true)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentSlide === index
-                        ? "bg-blue-600 w-8"
-                        : "bg-gray-300 hover:bg-gray-400"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
 
             {/* Stats/Features Below Slider */}
@@ -1128,22 +1112,6 @@ export default function MainHome() {
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-
-              {/* Navigation Dots */}
-              <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-                      current === i
-                        ? "bg-white w-4 md:w-8"
-                        : "bg-white/50 hover:bg-white/80"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
                 ))}
               </div>
             </div>
