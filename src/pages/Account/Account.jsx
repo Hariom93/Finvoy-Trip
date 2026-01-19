@@ -18,7 +18,7 @@ export default function Account() {
 
   const menuList = [
     { title: "My Trips", icon: <FaSuitcase />, path: "/account/mytrips" },
-    { title: "Cleartrip Wallet", icon: <FaWallet />, path: "/account/finvoytripwallet", right: "₹0" },
+    { title: "FinvoyGlobal Wallet", icon: <FaWallet />, path: "/account/FinvoyGlobalwallet", right: "₹0" },
     { title: "Bus Pass", icon: <FaTicketAlt />, path: "/account/buspass" },
     { title: "Saved Payment Modes", icon: <FaCreditCard />, path: "/account/savepayment" },
     { title: "Invite and Earn", icon: <FaGift />, path: "/account/invitecard", badge: "₹350 per month" },

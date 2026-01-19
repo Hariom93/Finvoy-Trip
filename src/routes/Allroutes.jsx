@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
 import MyTrips from "../pages/Account/MyTrips";
-import FinvoyTripWallet from "../pages/Account/FinvoyTripWallet";
+import FinvoyGlobalWallet from "../pages/Account/FinvoyTripWallet";
 import Offers from "../pages/Offers.jsx";
 import PackagePage from "../pages/PackagePage";
 import InviteCard from "../pages/Account/InviteCard";
@@ -72,7 +72,7 @@ const Allroutes = () => {
           <Route path="/account" element={<Account />} />
           <Route path="/account/mytrips" element={<MyTrips />} />
           <Route path="/account/InviteCard" element={<InviteCard />} />
-          <Route path="/account/finvoytripwallet" element={<FinvoyTripWallet />} />
+          <Route path="/account/FinvoyGlobalwallet" element={<FinvoyGlobalWallet />} />
           <Route path="/account/savepayment" element={<SavePayment />} />
           <Route path="/account/buspass" element={<BusPass />} />
 

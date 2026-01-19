@@ -46,7 +46,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+966 11 123 4567',
-        email: 'ksa@cleartrip.com',
+        email: 'ksa@FinvoyGlobal.com',
         support: 'Arabic speaking agents available',
         timezone: 'Arabian Standard Time (GMT+3)'
       },
@@ -66,7 +66,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+852 1234 5678',
-        email: 'hk@cleartrip.com',
+        email: 'hk@FinvoyGlobal.com',
         support: 'Cantonese & Mandarin speaking agents',
         timezone: 'Hong Kong Time (GMT+8)'
       },
@@ -86,7 +86,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+1 800 123 4567',
-        email: 'usa@cleartrip.com',
+        email: 'usa@FinvoyGlobal.com',
         support: 'English speaking agents 24/7',
         timezone: 'Pacific Time (GMT-8)'
       },
@@ -116,7 +116,7 @@ const DetailCard = () => {
         reviews: 234,
         validity: "Valid until Dec 31, 2024",
         terms: "Free cancellation • Breakfast included • Spa access • Airport transfer • Welcome drink",
-        bookingLink: "https://www.cleartrip.com/hotels/details/riyadh-luxury",
+        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/riyadh-luxury",
         location: "Riyadh, Saudi Arabia",
         duration: "3 Nights 4 Days",
         inclusions: [
@@ -167,7 +167,7 @@ const DetailCard = () => {
         reviews: 567,
         validity: "Valid for Umrah season 2025",
         terms: "Guided tours • 5-star accommodation • Transportation • Meals included",
-        bookingLink: "https://www.cleartrip.com/tours/makkah-madinah",
+        bookingLink: "https://www.FinvoyGlobal.com/tours/makkah-madinah",
         location: "Makkah & Madinah, Saudi Arabia",
         duration: "7 Days 6 Nights",
         inclusions: [
@@ -218,7 +218,7 @@ const DetailCard = () => {
         reviews: 312,
         validity: "Valid until Mar 31, 2025",
         terms: "Free cancellation • Harbor view • Breakfast included • MTR access",
-        bookingLink: "https://www.cleartrip.com/hotels/details/hongkong-luxury",
+        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/hongkong-luxury",
         location: "Central, Hong Kong Island",
         duration: "4 Nights 5 Days",
         inclusions: [
@@ -267,7 +267,7 @@ const DetailCard = () => {
         reviews: 189,
         validity: "Valid for 12 months",
         terms: "Cable car tickets • Lunch included • English guide • Hotel pickup",
-        bookingLink: "https://www.cleartrip.com/tours/lantau-island",
+        bookingLink: "https://www.FinvoyGlobal.com/tours/lantau-island",
         location: "Lantau Island, Hong Kong",
         duration: "1 Day Tour",
         inclusions: [
@@ -312,7 +312,7 @@ const DetailCard = () => {
         reviews: 421,
         validity: "Valid until Dec 2025",
         terms: "Guided tours • Accommodation • Some meals • Transportation",
-        bookingLink: "https://www.cleartrip.com/tours/grand-canyon-vegas",
+        bookingLink: "https://www.FinvoyGlobal.com/tours/grand-canyon-vegas",
         location: "Arizona & Nevada, USA",
         duration: "5 Days 4 Nights",
         inclusions: [
@@ -361,7 +361,7 @@ const DetailCard = () => {
         reviews: 287,
         validity: "Valid until Nov 2025",
         terms: "Alcatraz tickets • Cable car pass • Hotel • Breakfast included",
-        bookingLink: "https://www.cleartrip.com/hotels/details/san-francisco",
+        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/san-francisco",
         location: "San Francisco, California",
         duration: "4 Nights 3 Days",
         inclusions: [
@@ -1311,7 +1311,7 @@ const DetailCard = () => {
               Official travel partner for {getDestinationName(destination)} • Best price guarantee
             </p>
             <p className="text-gray-500 text-xs sm:text-sm">
-              All prices are in USD. Terms and conditions apply. © 2024 Cleartrip.
+              All prices are in USD. Terms and conditions apply. © 2024 FinvoyGlobal.
             </p>
           </div>
         </div>

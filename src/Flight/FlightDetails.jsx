@@ -190,7 +190,7 @@ const FlightSearch = () => {
           <div>
             <p className="font-medium">Unlock 10% extra savings</p>
             <p className="text-gray-400 text-xs">
-              Business fares by Cleartrip for Work
+              Business fares by FinvoyGlobal for Work
             </p>
           </div>
         </div>

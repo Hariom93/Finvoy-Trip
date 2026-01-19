@@ -1,8 +1,8 @@
-// CleartripWallet.jsx
+// FinvoyGlobalWallet.jsx
 import React, { useState } from 'react';
 import { Wallet, Smartphone, Gift, User, X, Plane, CreditCard, Award } from 'lucide-react';
 
-const FinvoyTripWallet = () => {
+const FinvoyGlobalWallet = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [showMobileBanner, setShowMobileBanner] = useState(true);
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -18,17 +18,17 @@ const FinvoyTripWallet = () => {
   const faqs = [
     {
       id: 1,
-      question: "What is Cleartrip Wallet?",
-      answer: "Cleartrip Wallet is a secure digital wallet that stores your travel funds, rewards, and credits. You can use it to make faster bookings, manage refunds, and earn rewards on your transactions."
+      question: "What is FinvoyGlobal Wallet?",
+      answer: "FinvoyGlobal Wallet is a secure digital wallet that stores your travel funds, rewards, and credits. You can use it to make faster bookings, manage refunds, and earn rewards on your transactions."
     },
     {
       id: 2,
-      question: "How does balance get added to Cleartrip Wallet?",
-      answer: "There are 2 types of balances which can get credited to your Cleartrip Wallet - Credit and Reward.",
+      question: "How does balance get added to FinvoyGlobal Wallet?",
+      answer: "There are 2 types of balances which can get credited to your FinvoyGlobal Wallet - Credit and Reward.",
       details: [
         {
           type: "Credit balance",
-          description: "is the amount earned via cancellation refunds. Credit balance gets added to the Cleartrip Wallet when you choose to get Refunds via Cleartrip Wallet during cancellation, e.g., let be either Credit Balance shall be in the case of a loan or credit balance."
+          description: "is the amount earned via cancellation refunds. Credit balance gets added to the FinvoyGlobal Wallet when you choose to get Refunds via FinvoyGlobal Wallet during cancellation, e.g., let be either Credit Balance shall be in the case of a loan or credit balance."
         },
         {
           type: "Reward balance",
@@ -55,7 +55,7 @@ const FinvoyTripWallet = () => {
                 <Wallet className="w-6 h-6 text-teal-600" />
               </div>
               <div>
-                <h1 className="text-xl font-bold">Cleartrip Wallet</h1>
+                <h1 className="text-xl font-bold">FinvoyGlobal Wallet</h1>
                 <p className="text-teal-100 text-sm">Manage your travel funds</p>
               </div>
             </div>
@@ -89,7 +89,7 @@ const FinvoyTripWallet = () => {
           <div className="p-5 border-b border-gray-100">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <h2 className="text-xl font-bold text-gray-800">Cleartrip Wallet balance</h2>
+                <h2 className="text-xl font-bold text-gray-800">FinvoyGlobal Wallet balance</h2>
                 <p className="text-gray-500 text-sm mt-1">View your available funds and rewards</p>
               </div>
               <button
@@ -162,7 +162,7 @@ const FinvoyTripWallet = () => {
               </div>
               <h3 className="text-lg font-semibold text-gray-700 mb-2">No transactions yet</h3>
               <p className="text-gray-500 max-w-md mx-auto">
-                Your transaction history will appear here once you start using your Cleartrip Wallet.
+                Your transaction history will appear here once you start using your FinvoyGlobal Wallet.
               </p>
             </div>
           </div>
@@ -261,12 +261,12 @@ const FinvoyTripWallet = () => {
               <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
                 <Plane className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-800">Cleartrip</span>
+              <span className="text-xl font-bold text-gray-800">FinvoyGlobal</span>
             </div>
             
             <div className="text-gray-600 text-sm text-center">
-              <p>© 2025 Cleartrip Mobile Pvt. Ltd. All rights reserved.</p>
-              <p className="mt-1 text-gray-500">Cleartrip Wallet is a digital wallet service</p>
+              <p>© 2025 FinvoyGlobal Mobile Pvt. Ltd. All rights reserved.</p>
+              <p className="mt-1 text-gray-500">FinvoyGlobal Wallet is a digital wallet service</p>
             </div>
             
             <div className="flex space-x-4">
@@ -288,4 +288,4 @@ const FinvoyTripWallet = () => {
   );
 };
 
-export default FinvoyTripWallet;
+export default FinvoyGlobalWallet;

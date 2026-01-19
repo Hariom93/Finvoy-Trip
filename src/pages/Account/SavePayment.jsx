@@ -61,7 +61,7 @@ const SavedPayment = () => {
     {
       id: 3,
       type: 'wallet',
-      name: 'Cleartrip Wallet',
+      name: 'FinvoyGlobal Wallet',
       balance: '₹2,450',
       isDefault: false,
       icon: <Wallet className="w-5 h-5" />,
@@ -666,11 +666,11 @@ const SavedPayment = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <Wallet className="w-6 h-6" />
-              <span className="text-lg font-bold">Cleartrip Payments</span>
+              <span className="text-lg font-bold">FinvoyGlobal Payments</span>
             </div>
             
             <div className="text-gray-400 text-sm text-center">
-              <p>© 2025 Cleartrip.com. All rights reserved.</p>
+              <p>© 2025 FinvoyGlobal.com. All rights reserved.</p>
               <p className="mt-1">Your payment security is our priority</p>
             </div>
             

@@ -248,7 +248,7 @@ export default function MainHome() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img src={logo} alt="Cleartrip Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
+              <img src={logo} alt="FinvoyGlobal Logo" className="h-20 w-auto md:h-22 sm:h-18 " />
             </div>
 
             {/* Super Coins */}
@@ -735,10 +735,10 @@ export default function MainHome() {
               </h2>
               <div className="prose prose-sm md:prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-4 md:mb-6">
-                  Launched in July 2006, <strong className="text-gray-900">Finvoy-Trip Pvt Ltd</strong>, a Flipkart company, has emerged as India's fastest-growing online travel technology company. In April 2021, Flipkart acquired a majority stake in Cleartrip.
+                  Launched in July 2006, <strong className="text-gray-900">Finvoy-Trip Pvt Ltd</strong>, a Flipkart company, has emerged as India's fastest-growing online travel technology company. In April 2021, Flipkart acquired a majority stake in FinvoyGlobal.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  Cleartrip recently emerged as the no. 2 OTA player as per a study by VIDEC. With an aggressive plan to emerge as a leading innovator in the industry, Cleartrip is on its way to revolutionize travel experiences across India and beyond.
+                  FinvoyGlobal recently emerged as the no. 2 OTA player as per a study by VIDEC. With an aggressive plan to emerge as a leading innovator in the industry, FinvoyGlobal is on its way to revolutionize travel experiences across India and beyond.
                 </p>
               </div>
             </div>
@@ -755,7 +755,7 @@ export default function MainHome() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-4 md:mb-6">
-                <img src={logo} alt="Cleartrip" className="h-8 md:h-10 w-auto filter brightness-0 invert" />
+                <img src={logo} alt="FinvoyGlobal" className="h-8 md:h-10 w-auto filter brightness-0 invert" />
                 <span className="text-xl md:text-2xl font-bold">Finvoy-Trip</span>
               </div>
               <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
@@ -795,7 +795,7 @@ export default function MainHome() {
             <div>
               <h4 className="text-base md:text-lg font-semibold mb-4">Company</h4>
               <ul className="space-y-2">
-                {['About Us', 'Careers', 'Blog', 'Cleartrip for Business'].map((item) => (
+                {['About Us', 'Careers', 'Blog', 'FinvoyGlobal for Business'].map((item) => (
                   <li key={item}>
                     <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base">
                       {item}
@@ -827,7 +827,7 @@ export default function MainHome() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-500 text-xs md:text-sm">
-                © 2006–2025 Cleartrip Pvt. Ltd. All rights reserved.
+                © 2006–2025 FinvoyGlobal Pvt. Ltd. All rights reserved.
               </p>
               <p className="text-gray-400 text-xs md:text-sm mt-2">
                 Covid-19 lockdown refund procedure

@@ -43,7 +43,7 @@ export default function Work() {
         "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800",
         "https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?w=800"
       ],
-      liveUrl: "https://demo.finvoytrip.com/search",
+      liveUrl: "https://demo.FinvoyGlobal.com/search",
       githubUrl: "https://github.com/finvoy/flight-search",
       stats: { users: "50K+", rating: 4.8, uptime: "99.9%" },
       highlights: [
@@ -63,7 +63,7 @@ export default function Work() {
         "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
         "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800"
       ],
-      liveUrl: "https://demo.finvoytrip.com/booking",
+      liveUrl: "https://demo.FinvoyGlobal.com/booking",
       githubUrl: "https://github.com/finvoy/booking-system",
       stats: { users: "100K+", rating: 4.9, uptime: "99.8%" },
       highlights: [
@@ -103,7 +103,7 @@ export default function Work() {
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800"
       ],
-      liveUrl: "https://demo.finvoytrip.com/payment",
+      liveUrl: "https://demo.FinvoyGlobal.com/payment",
       githubUrl: "https://github.com/finvoy/payment-gateway",
       stats: { users: "150K+", rating: 4.8, uptime: "99.95%" },
       highlights: [
@@ -123,7 +123,7 @@ export default function Work() {
         "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800",
         "https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800"
       ],
-      liveUrl: "https://demo.finvoytrip.com/tracker",
+      liveUrl: "https://demo.FinvoyGlobal.com/tracker",
       githubUrl: "https://github.com/finvoy/flight-tracker",
       stats: { users: "75K+", rating: 4.6, uptime: "99.9%" },
       highlights: [
@@ -143,7 +143,7 @@ export default function Work() {
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
       ],
-      liveUrl: "https://admin.finvoytrip.com",
+      liveUrl: "https://admin.FinvoyGlobal.com",
       githubUrl: "https://github.com/finvoy/admin-dashboard",
       stats: { users: "500+", rating: 4.9, uptime: "99.99%" },
       highlights: [

@@ -30,7 +30,7 @@ const destinationName = 'saudi-arabia';
       reviews: 128,
       validity: "Valid until Dec 31, 2024",
       terms: "Free cancellation • Breakfast included",
-      bookingLink: "https://www.cleartrip.com/hotels/details/1"
+      bookingLink: "https://www.FinvoyGlobal.com/hotels/details/1"
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ const destinationName = 'saudi-arabia';
       reviews: 245,
       validity: "Valid until Jan 15, 2025",
       terms: "Flexible dates • All inclusive",
-      bookingLink: "https://www.cleartrip.com/combo/2"
+      bookingLink: "https://www.FinvoyGlobal.com/combo/2"
     },
     {
       id: 3,
@@ -60,7 +60,7 @@ const destinationName = 'saudi-arabia';
       reviews: 567,
       validity: "Valid for 6 months",
       terms: "Mobile ticket • Instant confirmation",
-      bookingLink: "https://www.cleartrip.com/activities/3"
+      bookingLink: "https://www.FinvoyGlobal.com/activities/3"
     },
     {
       id: 4,
@@ -75,7 +75,7 @@ const destinationName = 'saudi-arabia';
       reviews: 189,
       validity: "Valid until Mar 31, 2025",
       terms: "English guide • Hotel pickup",
-      bookingLink: "https://www.cleartrip.com/tours/4"
+      bookingLink: "https://www.FinvoyGlobal.com/tours/4"
     },
     {
       id: 5,
@@ -90,7 +90,7 @@ const destinationName = 'saudi-arabia';
       reviews: 92,
       validity: "Valid for booking 24 hours in advance",
       terms: "Meet & greet • 24/7 service",
-      bookingLink: "https://www.cleartrip.com/transport/5"
+      bookingLink: "https://www.FinvoyGlobal.com/transport/5"
     },
     {
       id: 6,
@@ -105,7 +105,7 @@ const destinationName = 'saudi-arabia';
       reviews: 76,
       validity: "Valid until Feb 28, 2025",
       terms: "Multiple stores • Tax free",
-      bookingLink: "https://www.cleartrip.com/shopping/6"
+      bookingLink: "https://www.FinvoyGlobal.com/shopping/6"
     }
   ];
 
@@ -424,7 +424,7 @@ const destinationName = 'saudi-arabia';
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              Download Cleartrip App
+              Download FinvoyGlobal App
             </button>
             <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               View All Hong Kong Deals
@@ -443,7 +443,7 @@ const destinationName = 'saudi-arabia';
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-xl">C</span>
                 </div>
-                <h3 className="text-2xl font-bold">Cleartrip</h3>
+                <h3 className="text-2xl font-bold">FinvoyGlobal</h3>
               </div>
               <p className="text-gray-400">Your trusted travel partner for amazing deals and experiences.</p>
             </div>
@@ -477,7 +477,7 @@ const destinationName = 'saudi-arabia';
                 </li>
                 <li className="flex items-center">
                   <FaEnvelope className="mr-3" />
-                  <span>support@cleartrip.com</span>
+                  <span>support@FinvoyGlobal.com</span>
                 </li>
                 <li className="flex items-center">
                   <FaUser className="mr-3" />
@@ -488,7 +488,7 @@ const destinationName = 'saudi-arabia';
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-            <p>© 2024 Cleartrip. All rights reserved. | Hong Kong Travel Offers</p>
+            <p>© 2024 FinvoyGlobal. All rights reserved. | Hong Kong Travel Offers</p>
           </div>
         </div>
       </footer>
