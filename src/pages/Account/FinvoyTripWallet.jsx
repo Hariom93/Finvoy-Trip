@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Wallet, Smartphone, Gift, User, X, Plane, CreditCard, Award } from 'lucide-react';
 
-const FinvoyTripWallet = () => {
+const FinvoyGlobalWallet = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [showMobileBanner, setShowMobileBanner] = useState(true);
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -288,4 +288,4 @@ const FinvoyTripWallet = () => {
   );
 };
 
-export default FinvoyTripWallet;
+export default FinvoyGlobalWallet;

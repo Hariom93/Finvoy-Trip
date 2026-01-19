@@ -567,7 +567,6 @@ const DetailCard = () => {
     const ref = `BOOK-${Date.now().toString().slice(-8)}`;
     setBookingReference(ref);
     
-    // Simulate API call
     setTimeout(() => {
       setIsSubmittingBooking(false);
       setBookingSuccess(true);

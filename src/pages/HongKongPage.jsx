@@ -60,7 +60,6 @@ const destinationName = 'saudi-arabia';
       reviews: 567,
       validity: "Valid for 6 months",
       terms: "Mobile ticket • Instant confirmation",
-
     },
     {
       id: 4,

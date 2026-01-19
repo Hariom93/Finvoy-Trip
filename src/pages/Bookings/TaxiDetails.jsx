@@ -313,13 +313,9 @@ const TaxiDetails = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Contact submitted:', { name, email, phone });
-      
-      // Send to WhatsApp (change this to your admin number)
-      const adminWhatsAppNumber = "919876543210"; // Your admin's WhatsApp number
-      const message = `🚕 *New Taxi Booking Request* 🚕
+    // Send to WhatsApp (change this to your admin number)
+    const adminWhatsAppNumber = "919876543210"; // Your admin's WhatsApp number
+    const message = `🚕 *New Taxi Booking Request* 🚕
 
 📋 *Customer Details:*
 • Name: ${name}
@@ -350,17 +346,15 @@ ${phone ? `• Phone: +91 ${phone}` : ''}
 
 _This booking request was sent via Finvoy-Global Taxi App_`;
 
-      const whatsappURL = `https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURL, '_blank');
-      
-      // Close popup after sending
-      setShowContactPopup(false);
-      setIsSubmitting(false);
-      
-      // Show success message
-      alert("✅ Booking request sent to admin!\n\nYour booking details have been sent to our admin team via WhatsApp. You'll be contacted shortly to confirm your ride.");
-      
-    }, 1000);
+    const whatsappURL = `https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Close popup after sending
+    setShowContactPopup(false);
+    setIsSubmitting(false);
+    
+    // Show success message
+    alert("✅ Booking request sent to admin!\n\nYour booking details have been sent to our admin team via WhatsApp. You'll be contacted shortly to confirm your ride.");
   };
 
   return (

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import React from 'react';
 import MainHome from '../pages/MainHome';
 import MyTrips from "../pages/Account/MyTrips";
-import FinvoyTripWallet from "../pages/Account/FinvoyTripWallet";
+import FinvoyGlobalWallet from "../pages/Account/FinvoyTripWallet";
 import Offers from "../pages/Offers.jsx";
 import PackagePage from "../pages/PackagePage";
 import InviteCard from "../pages/Account/InviteCard";
@@ -14,12 +14,7 @@ import WesternAmericaPage from "../pages/WesternAmericaPage";
 import BusPass from "../pages/Account/Buspas";
 import { Routes, Route } from "react-router-dom";
 import HolidayDetails from '../Trips/HolidayDetails';
-import Flightdetail from '../Flight/FlightDetails';
 import ScrollToTop from '../components/ScrollToTop';
-import SavePayment from '../pages/Account/SavePayment';
-import FlightResults from '../Flight/flights';
-import Review from '../Flight/Flightcan';
-import SeatSelection from '../Flight/SeatSelect';
 import Holidays from '../pages/Holidays';
 import ExclusiveOffer from "../pages/ExclusiveOffer";
 import ExclusiveOfferDetails from '../pages/ExclusiveOfferDetails';
@@ -28,12 +23,12 @@ import DestinationDetail from "../Trips/TripComponents/DestinationDetail";
 import DestinationDetails from "../pages/PopularDestinations/DestinationDetails";
 import DetailCard from '../pages/Getawayspage/DetailCard';
 import Account from "../pages/Account/Account";
-import TravellerDetails from "../Flight/travellerDetail";
 import Hotels from '../pages/Bookings/Hotels.jsx'
 import HotelsDetails from '../pages/Bookings/HotelsDetails.jsx'
 import Taxi from '../pages/Bookings/Taxi.jsx'
 import TaxiDetails from '../pages/Bookings/TaxiDetails.jsx'
 import Login from "../pages/Auth/Login.jsx";
+<<<<<<< HEAD
 import HotelForm from "../components/hotel-enquiry-form/hotel-form.jsx";
 import FlightForm from "../components/hotel-enquiry-form/flight-form.jsx";
 // import Dehlii from "../PopularDestinationss/Dehlii.jsx";
@@ -42,6 +37,10 @@ import FlightForm from "../components/hotel-enquiry-form/flight-form.jsx";
 // import Goa from "../PopularDestinationss/Goa.jsx";
 // import Mumbai from "../PopularDestinationss/Mumbai.jsx";
 // import Bangalore from "../PopularDestinationss/Banglore.jsx";
+=======
+import ComingSoon from "../pages/Account/comming.jsx";
+import AboutUs from "../pages/Work";
+>>>>>>> 18131a2627749f95b70f834cb1635ac2b68a2474
 
 
 const Allroutes = () => {
@@ -51,53 +50,34 @@ const Allroutes = () => {
       <div>
         <Routes>
 
-          {/* Popular Destination Pages
-          <Route path="/populardestinationss/dehlii" element={<Dehlii />} />
-          <Route path="/populardestinationss/dubai" element={<Dubai />} />
-          <Route path="/populardestinationss/singapore" element={<Singapore />} />
-          <Route path="/populardestinationss/goa" element={<Goa />} />
-          <Route path="/populardestinationss/mumbai" element={<Mumbai />} />
-          <Route path="/populardestinationss/bangalore" element={<Bangalore />} /> */}
-          <Route path="/login" element={<Login />} />
-          {/* Dynamic Destination Detail */}
-          <Route path="/hotal" element={<Hotels />} />
+           {/* <Route path="/hotal" element={<Hotels />} /> */}
           
-          <Route path="/hotel/:id" element={<HotelsDetails/>} />
-
-          <Route path="/taxi" element={<Taxi />} />
-          <Route path="/taxi/:id" element={<TaxiDetails />} />
+          {/* <Route path="/hotel/:id" element={<HotelsDetails/>} /> */}
+        <Route path="/comming" element={<ComingSoon />} />
+          {/* <Route path="/taxi" element={<Taxi />} /> */}
+          {/* <Route path="/taxi/:id" element={<TaxiDetails />} /> */}
 
           <Route path="/offers" element={<Offers />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/destination/:id" element={<DestinationDetail />} />
           <Route path="/destinations/:id" element={<DestinationDetails />} />
           <Route path="/exclusiveoffer" element={<ExclusiveOffer />} />
           <Route path="/exclusiveofferfdetails/:id" element={<ExclusiveOfferDetails />} />
           <Route path="/detail/:destination/:id" element={<DetailCard />} />
           {/* Holidays */}
-          <Route path="/holidays" element={<Holidays />} />
-          <Route path="/holidays/:id" element={<HolidaysDetails />} />
+          {/* <Route path="/holidays" element={<Holidays />} /> */}
+          {/* <Route path="/holidays/:id" element={<HolidaysDetails />} /> */}
 
           {/* Main */}
           <Route path="/" element={<MainHome />} />
 
           {/* Account */}
-          <Route path="/account" element={<Account />} />
-          <Route path="/account/mytrips" element={<MyTrips />} />
-          <Route path="/account/InviteCard" element={<InviteCard />} />
-          <Route path="/account/finvoytripwallet" element={<FinvoyTripWallet />} />
-          <Route path="/account/savepayment" element={<SavePayment />} />
-          <Route path="/account/buspass" element={<BusPass />} />
-
+          <Route path="/contact" element={<Account />} />
+      
           {/* Flight */}
-          <Route path="/flight" element={<Flightdetail />} />
-          <Route path="/results" element={<FlightResults />} />
-          <Route path="/flightconf" element={<Review />} />
-          <Route path="/seats" element={<SeatSelection />} />
-          <Route path="/traveller-details" element={<TravellerDetails />} />
-
+       
           {/* Packages */}
-          <Route path="/package/:id" element={<PackagePage />} />
+          {/* <Route path="/package/:id" element={<PackagePage />} /> */}
 
           {/* Country Pages */}
           <Route path="/hongkong" element={<HongKongPage />} />
@@ -105,6 +85,7 @@ const Allroutes = () => {
           <Route path="/western-america" element={<WesternAmericaPage />} />
           <Route path="/hotel-form" element={<HotelForm />} />
           <Route path="/flight-form" element={<FlightForm />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
       <Navbar />

@@ -331,18 +331,14 @@ const HotelDetails = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Hotel booking submitted:', { name, email, phone });
-      
-      // Send to WhatsApp (change this to your admin number)
-      const adminWhatsAppNumber = "919876543210"; // Your admin's WhatsApp number
-      
-      // Calculate nights
-      const nights = checkInDate && checkOutDate ? 
-        Math.ceil((new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24)) : 3;
-      
-      const message = `🏨 *New Hotel Booking Request* 🏨
+    // Send to WhatsApp (change this to your admin number)
+    const adminWhatsAppNumber = "919876543210"; // Your admin's WhatsApp number
+    
+    // Calculate nights
+    const nights = checkInDate && checkOutDate ? 
+      Math.ceil((new Date(checkOutDate) - new Date(checkInDate)) / (1000 * 60 * 60 * 24)) : 3;
+    
+    const message = `🏨 *New Hotel Booking Request* 🏨
 
 📋 *Guest Details:*
 • Name: ${name}
@@ -377,17 +373,16 @@ ${hotel.highlights.map(h => `• ${h}`).join('\n')}
 
 _This booking request was sent via Finvoy-Global Hotel App_`;
 
-      const whatsappURL = `https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURL, '_blank');
-      
-      // Close popup after sending
-      setShowContactPopup(false);
-      setIsSubmitting(false);
-      
-      // Show success message
-      alert("✅ Hotel booking request sent!\n\nYour booking details have been sent to our admin team via WhatsApp. You'll be contacted shortly to confirm your reservation.");
-      
-    }, 1000);
+    const whatsappURL = `https://wa.me/${adminWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Close popup after sending
+    setShowContactPopup(false);
+    setIsSubmitting(false);
+    
+    // Show success message
+    alert("✅ Hotel booking request sent!\n\nYour booking details have been sent to our admin team via WhatsApp. You'll be contacted shortly to confirm your reservation.");
+    
   };
 
   return (

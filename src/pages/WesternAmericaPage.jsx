@@ -106,7 +106,6 @@ const WesternAmericaPage = () => {
       reviews: 423,
       validity: "Mar - Aug 2025 season",
       terms: "Certified guides • All equipment • Photos included",
-
     },
     {
       id: 7,
@@ -136,7 +135,6 @@ const WesternAmericaPage = () => {
       reviews: 278,
       validity: "Valid until Dec 2025",
       terms: "Hotel pickup • Dinner included • Guide",
-
     },
     {
       id: 9,

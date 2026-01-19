@@ -30,7 +30,6 @@ const Buspas = () => {
   const [showHowItWorks, setShowHowItWorks] = useState(false);
 
   useEffect(() => {
-    // Simulate API loading
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);

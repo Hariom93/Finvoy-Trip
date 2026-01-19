@@ -427,10 +427,10 @@ export default function MainHome() {
                 Holidays
               </a>
               <a
-                href="/account"
+                href="/contact"
                 className="text-gray-600 hover:text-blue-600 font-medium"
               >
-                Account
+                Contact Us
               </a>
               <a
                 href="/offers"
@@ -439,7 +439,7 @@ export default function MainHome() {
                 Offers
               </a>
               <a
-                href="/work"
+                href="/about"
                 className="text-gray-600 hover:text-blue-600 font-medium"
               >
                 About Us
@@ -1142,7 +1142,7 @@ export default function MainHome() {
                     </p>
                   </div>
                   <button
-                    onClick={() => navigate("/exclusiveoffer")}
+                    onClick={() => navigate("/comming")}
                     className="mt-4 md:mt-6 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition-colors w-full"
                   >
                     Explore Now

@@ -83,7 +83,6 @@ const Login = () => {
   
     localStorage.setItem("user", JSON.stringify(loginData));
   
-    // Simulate API call
     setTimeout(() => {
       setLoading(false);
   

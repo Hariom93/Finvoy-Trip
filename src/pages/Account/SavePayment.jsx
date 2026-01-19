@@ -110,7 +110,6 @@ const SavedPayment = () => {
   });
 
   useEffect(() => {
-    // Simulate API loading
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);

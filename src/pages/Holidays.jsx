@@ -34,7 +34,6 @@ const DestinationsPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulate API loading
     const timer = setTimeout(() => {
       setDestinations(destinationsData);
       setLoading(false);
