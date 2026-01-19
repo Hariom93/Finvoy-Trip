@@ -28,7 +28,6 @@ import HotelsDetails from '../pages/Bookings/HotelsDetails.jsx'
 import Taxi from '../pages/Bookings/Taxi.jsx'
 import TaxiDetails from '../pages/Bookings/TaxiDetails.jsx'
 import Login from "../pages/Auth/Login.jsx";
-<<<<<<< HEAD
 import HotelForm from "../components/hotel-enquiry-form/hotel-form.jsx";
 import FlightForm from "../components/hotel-enquiry-form/flight-form.jsx";
 // import Dehlii from "../PopularDestinationss/Dehlii.jsx";
@@ -37,10 +36,8 @@ import FlightForm from "../components/hotel-enquiry-form/flight-form.jsx";
 // import Goa from "../PopularDestinationss/Goa.jsx";
 // import Mumbai from "../PopularDestinationss/Mumbai.jsx";
 // import Bangalore from "../PopularDestinationss/Banglore.jsx";
-=======
 import ComingSoon from "../pages/Account/comming.jsx";
 import AboutUs from "../pages/Work";
->>>>>>> 18131a2627749f95b70f834cb1635ac2b68a2474
 
 
 const Allroutes = () => {
