@@ -57,7 +57,6 @@ const SimpleInquiryForm = ({ offerTitle, destination, onClose }) => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate API call
     setTimeout(() => {
       console.log('Form submitted:', { ...formData, offerTitle, destination });
       setLoading(false);

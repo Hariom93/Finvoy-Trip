@@ -3,6 +3,8 @@ import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEn
 import { HiExternalLink } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import BackButton from "../components/BackButton";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 // Inside component:
  // Change for each page
@@ -30,7 +32,6 @@ const WesternAmericaPage = () => {
       reviews: 189,
       validity: "Valid until Dec 31, 2024",
       terms: "Free cancellation • Breakfast included • River view",
-      bookingLink: "https://www.FinvoyGlobal.com/hotels/details/perth-luxury"
     },
     {
       id: 2,
@@ -45,7 +46,7 @@ const WesternAmericaPage = () => {
       reviews: 342,
       validity: "Valid for 12 months",
       terms: "Quokka spotting • All equipment • Flexible dates",
-      bookingLink: "https://www.FinvoyGlobal.com/activities/rottnest-island"
+     
     },
     {
       id: 3,
@@ -60,7 +61,7 @@ const WesternAmericaPage = () => {
       reviews: 267,
       validity: "Valid until Mar 31, 2025",
       terms: "Lunch included • Hotel pickup • Wine tasting",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/margaret-river"
+     
     },
     {
       id: 4,
@@ -75,7 +76,7 @@ const WesternAmericaPage = () => {
       reviews: 156,
       validity: "Travel until Jun 2025",
       terms: "Flexible dates • Free changes • 23kg baggage",
-      bookingLink: "https://www.FinvoyGlobal.com/flights/perth-broome"
+      
     },
     {
       id: 5,
@@ -90,7 +91,7 @@ const WesternAmericaPage = () => {
       reviews: 89,
       validity: "Apr - Oct 2025 season",
       terms: "All meals • Camping gear • Expert guide",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/kimberley-4wd"
+     
     },
     {
       id: 6,
@@ -105,7 +106,6 @@ const WesternAmericaPage = () => {
       reviews: 423,
       validity: "Mar - Aug 2025 season",
       terms: "Certified guides • All equipment • Photos included",
-      bookingLink: "https://www.FinvoyGlobal.com/activities/ningaloo-reef"
     },
     {
       id: 7,
@@ -120,7 +120,7 @@ const WesternAmericaPage = () => {
       reviews: 134,
       validity: "Valid for 6 months",
       terms: "Unlimited km • Full insurance • Free cancellation",
-      bookingLink: "https://www.FinvoyGlobal.com/transport/perth-car-rental"
+     
     },
     {
       id: 8,
@@ -135,7 +135,6 @@ const WesternAmericaPage = () => {
       reviews: 278,
       validity: "Valid until Dec 2025",
       terms: "Hotel pickup • Dinner included • Guide",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/pinnacles-desert"
     },
     {
       id: 9,
@@ -150,7 +149,7 @@ const WesternAmericaPage = () => {
       reviews: 189,
       validity: "Valid for 12 months",
       terms: "Family friendly • Accessible • Photos allowed",
-      bookingLink: "https://www.FinvoyGlobal.com/activities/busselton-jetty"
+      
     }
   ];
 
@@ -533,7 +532,7 @@ const WesternAmericaPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold">Western Australia</h3>
-                  <p className="text-amber-400 font-medium">FinvoyGlobal Exclusive Offers</p>
+                  <p className="text-amber-400 font-medium">FInvoy Exclusive Offers</p>
                 </div>
               </div>
               <p className="text-gray-400">
@@ -577,7 +576,8 @@ const WesternAmericaPage = () => {
                   <FaEnvelope className="mr-3 mt-1 text-amber-400" />
                   <div>
                     <div className="font-medium">Email Support</div>
-                    <div>wa@FinvoyGlobal.com</div>
+                    <div>wa@Finvoy-Global
+                    .com</div>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -603,11 +603,23 @@ const WesternAmericaPage = () => {
               </div>
             </div>
             <p className="text-gray-500 text-sm">
-              © 2024 FinvoyGlobal. All rights reserved. | Western Australia Travel Offers | ABN: 12 345 678 901
+              © 2024 Finvoy-GLobal. All rights reserved. | Western Australia Travel Offers | ABN: 12 345 678 901
             </p>
           </div>
         </div>
       </footer> */}
+        <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-22 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40 flex items-center justify-center"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      </motion.button>
     </div>
   );
 };

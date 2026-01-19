@@ -3,6 +3,8 @@ import { FaSearch, FaFilter, FaStar, FaTag, FaCalendarAlt, FaUser, FaPhone, FaEn
 import { HiExternalLink } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import BackButton from "../components/BackButton";
+import { motion, AnimatePresence } from "framer-motion";
+
 // Inside component:
  // Change for each page
 const SaudiPage = () => {
@@ -29,7 +31,6 @@ const SaudiPage = () => {
       reviews: 234,
       validity: "Valid until Dec 31, 2024",
       terms: "Free cancellation • Breakfast included • Spa access",
-      bookingLink: "https://www.FinvoyGlobal.com/hotels/details/riyadh-luxury"
     },
     {
       id: 2,
@@ -44,7 +45,6 @@ const SaudiPage = () => {
       reviews: 189,
       validity: "Valid until Mar 31, 2025",
       terms: "Sea view • Free parking • Family friendly",
-      bookingLink: "https://www.FinvoyGlobal.com/hotels/details/jeddah-corniche"
     },
     {
       id: 3,
@@ -59,7 +59,6 @@ const SaudiPage = () => {
       reviews: 567,
       validity: "Valid for Umrah season 2025",
       terms: "Guided tours • Accommodation • Transportation included",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/makkah-madinah"
     },
     {
       id: 4,
@@ -74,7 +73,6 @@ const SaudiPage = () => {
       reviews: 278,
       validity: "Valid until Apr 30, 2025",
       terms: "Desert camp • Guide • Meals included",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/alula-desert"
     },
     {
       id: 5,
@@ -89,7 +87,6 @@ const SaudiPage = () => {
       reviews: 145,
       validity: "Travel until Jun 2025",
       terms: "Flexible dates • Free changes • 30kg baggage",
-      bookingLink: "https://www.FinvoyGlobal.com/flights/riyadh-jeddah"
     },
     {
       id: 6,
@@ -104,7 +101,6 @@ const SaudiPage = () => {
       reviews: 198,
       validity: "Valid for 12 months",
       terms: "Certified guide • Equipment • Photos included",
-      bookingLink: "https://www.FinvoyGlobal.com/activities/red-sea-diving"
     },
     {
       id: 7,
@@ -119,7 +115,6 @@ const SaudiPage = () => {
       reviews: 167,
       validity: "Valid until Dec 2025",
       terms: "Dinner included • Cultural show • Hotel pickup",
-      bookingLink: "https://www.FinvoyGlobal.com/activities/saudi-dinner"
     },
     {
       id: 8,
@@ -134,7 +129,6 @@ const SaudiPage = () => {
       reviews: 123,
       validity: "Valid for 6 months",
       terms: "Unlimited km • Full insurance • Free cancellation",
-      bookingLink: "https://www.FinvoyGlobal.com/transport/saudi-car-rental"
     },
     {
       id: 9,
@@ -149,7 +143,6 @@ const SaudiPage = () => {
       reviews: 189,
       validity: "Valid for 12 months",
       terms: "Expert guide • Entrance fees • Transportation",
-      bookingLink: "https://www.FinvoyGlobal.com/tours/diriyah-historical"
     }
   ];
 
@@ -599,7 +592,7 @@ const SaudiPage = () => {
                   <FaEnvelope className="mr-3 mt-1 text-green-400" />
                   <div>
                     <div className="font-medium">Email Support</div>
-                    <div>ksa@FinvoyGlobal.com</div>
+                    <div>ksa@Finvoy-Global.com</div>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -625,11 +618,24 @@ const SaudiPage = () => {
               </div>
             </div>
             <p className="text-gray-500 text-sm">
-              © 2024 FinvoyGlobal. All rights reserved. | Saudi Arabia Tourism Revamp | Part of Saudi Vision 2030
+              © 2024 Finvoy-Global
+              . All rights reserved. | Saudi Arabia Tourism Revamp | Part of Saudi Vision 2030
             </p>
           </div>
         </div>
       </footer> */}
+        <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-22 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40 flex items-center justify-center"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      </motion.button>
     </div>
   );
 };

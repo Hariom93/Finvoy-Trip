@@ -334,7 +334,7 @@ const popularDestinations = [
     ]
   }
 ];
-import BackButton from "../../components/Backbutton";
+import BackButton from "../../components/BackButton";
 // ⭐ Enhanced Inquiry Form Component
 const InquiryForm = ({ destination, onClose }) => {
   const [formData, setFormData] = useState({
@@ -360,7 +360,6 @@ const InquiryForm = ({ destination, onClose }) => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate API call
     setTimeout(() => {
       console.log('Form submitted:', { ...formData, destination });
       setLoading(false);

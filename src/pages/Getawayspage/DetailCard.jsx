@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   FaStar, FaCalendarAlt, FaTag, FaMapMarkerAlt, FaUser, 
   FaPhone, FaEnvelope, FaCheck, FaTimes, FaArrowLeft, 
@@ -46,7 +47,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+966 11 123 4567',
-        email: 'ksa@FinvoyGlobal.com',
+        email: 'ksa@Finvoy-Gobal.com',
         support: 'Arabic speaking agents available',
         timezone: 'Arabian Standard Time (GMT+3)'
       },
@@ -66,7 +67,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+852 1234 5678',
-        email: 'hk@FinvoyGlobal.com',
+        email: 'hk@Finvoy-Gobal.com',
         support: 'Cantonese & Mandarin speaking agents',
         timezone: 'Hong Kong Time (GMT+8)'
       },
@@ -86,7 +87,7 @@ const DetailCard = () => {
       },
       contact: {
         phone: '+1 800 123 4567',
-        email: 'usa@FinvoyGlobal.com',
+        email: 'usa@Finvoy-Gobal.com',
         support: 'English speaking agents 24/7',
         timezone: 'Pacific Time (GMT-8)'
       },
@@ -116,7 +117,7 @@ const DetailCard = () => {
         reviews: 234,
         validity: "Valid until Dec 31, 2024",
         terms: "Free cancellation • Breakfast included • Spa access • Airport transfer • Welcome drink",
-        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/riyadh-luxury",
+        bookingLink: "https://www.Finvoy-Gobal.com/hotels/details/riyadh-luxury",
         location: "Riyadh, Saudi Arabia",
         duration: "3 Nights 4 Days",
         inclusions: [
@@ -167,7 +168,7 @@ const DetailCard = () => {
         reviews: 567,
         validity: "Valid for Umrah season 2025",
         terms: "Guided tours • 5-star accommodation • Transportation • Meals included",
-        bookingLink: "https://www.FinvoyGlobal.com/tours/makkah-madinah",
+        bookingLink: "https://www.Finvoy-Gobal.com/tours/makkah-madinah",
         location: "Makkah & Madinah, Saudi Arabia",
         duration: "7 Days 6 Nights",
         inclusions: [
@@ -218,7 +219,7 @@ const DetailCard = () => {
         reviews: 312,
         validity: "Valid until Mar 31, 2025",
         terms: "Free cancellation • Harbor view • Breakfast included • MTR access",
-        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/hongkong-luxury",
+        bookingLink: "https://www.Finvoy-Gobal.com/hotels/details/hongkong-luxury",
         location: "Central, Hong Kong Island",
         duration: "4 Nights 5 Days",
         inclusions: [
@@ -267,7 +268,7 @@ const DetailCard = () => {
         reviews: 189,
         validity: "Valid for 12 months",
         terms: "Cable car tickets • Lunch included • English guide • Hotel pickup",
-        bookingLink: "https://www.FinvoyGlobal.com/tours/lantau-island",
+        bookingLink: "https://www.Finvoy-Gobal.com/tours/lantau-island",
         location: "Lantau Island, Hong Kong",
         duration: "1 Day Tour",
         inclusions: [
@@ -312,7 +313,7 @@ const DetailCard = () => {
         reviews: 421,
         validity: "Valid until Dec 2025",
         terms: "Guided tours • Accommodation • Some meals • Transportation",
-        bookingLink: "https://www.FinvoyGlobal.com/tours/grand-canyon-vegas",
+        bookingLink: "https://www.Finvoy-Gobal.com/tours/grand-canyon-vegas",
         location: "Arizona & Nevada, USA",
         duration: "5 Days 4 Nights",
         inclusions: [
@@ -361,7 +362,7 @@ const DetailCard = () => {
         reviews: 287,
         validity: "Valid until Nov 2025",
         terms: "Alcatraz tickets • Cable car pass • Hotel • Breakfast included",
-        bookingLink: "https://www.FinvoyGlobal.com/hotels/details/san-francisco",
+        bookingLink: "https://www.Finvoy-Gobal.com/hotels/details/san-francisco",
         location: "San Francisco, California",
         duration: "4 Nights 3 Days",
         inclusions: [
@@ -566,7 +567,6 @@ const DetailCard = () => {
     const ref = `BOOK-${Date.now().toString().slice(-8)}`;
     setBookingReference(ref);
     
-    // Simulate API call
     setTimeout(() => {
       setIsSubmittingBooking(false);
       setBookingSuccess(true);
@@ -1311,7 +1311,7 @@ const DetailCard = () => {
               Official travel partner for {getDestinationName(destination)} • Best price guarantee
             </p>
             <p className="text-gray-500 text-xs sm:text-sm">
-              All prices are in USD. Terms and conditions apply. © 2024 FinvoyGlobal.
+              All prices are in USD. Terms and conditions apply. © 2024 Finvoy-Gobal.
             </p>
           </div>
         </div>
@@ -1458,6 +1458,18 @@ const DetailCard = () => {
           }
         }
       `}</style>
+        <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-22 right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/30 z-40 flex items-center justify-center"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      </motion.button>
     </div>
   );
 };

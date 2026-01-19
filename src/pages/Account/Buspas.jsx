@@ -30,7 +30,6 @@ const Buspas = () => {
   const [showHowItWorks, setShowHowItWorks] = useState(false);
 
   useEffect(() => {
-    // Simulate API loading
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);
@@ -133,7 +132,7 @@ const Buspas = () => {
                 <Bus className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-800">Finvoy-Trip</h1>
+                <h1 className="text-xl font-bold text-gray-800">Finvoy-Gobal</h1>
                 <p className="text-gray-500 text-sm">Travel unlimited. Save unlimited.</p>
               </div>
             </div>
@@ -309,7 +308,7 @@ const Buspas = () => {
       <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">How FinvoyGlobal Bus Pass Works</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">How Finvoy-Global Bus Pass Works</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Get your pass in 4 simple steps and start traveling immediately</p>
           </div>
 
@@ -390,8 +389,8 @@ const Buspas = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
-              q: "What is FinvoyGlobal Bus Pass?",
-              a: "FinvoyGlobal Bus Pass is a subscription service that allows unlimited travel on select bus routes for a fixed period. You pay once and travel multiple times."
+              q: "What is Finvoy-Global Bus Pass?",
+              a: "Finvoy-Global Bus Pass is a subscription service that allows unlimited travel on select bus routes for a fixed period. You pay once and travel multiple times."
             },
             {
               q: "How do I use my bus pass?",
@@ -424,7 +423,7 @@ const Buspas = () => {
         <div className="container mx-auto px-4 py-16 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of travelers who save time and money with FinvoyGlobal Bus Pass
+            Join thousands of travelers who save time and money with Finvoy-Global Bus Pass
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-bold flex items-center justify-center space-x-2">
@@ -446,7 +445,7 @@ const Buspas = () => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Bus className="w-8 h-8" />
-                <span className="text-xl font-bold">Finvoy-Trip Bus</span>
+                <span className="text-xl font-bold">Finvoy-Gobal Bus</span>
               </div>
               <p className="text-gray-400">Travel smarter with unlimited bus passes across India.</p>
             </div>
@@ -487,7 +486,7 @@ const Buspas = () => {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2025 FinvoyGlobal.com. All rights reserved.</p>
+            <p>© 2025 Finvoy-Global.com. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -510,7 +509,7 @@ const LoadingAnimation = () => {
         
         {/* Loading Text */}
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Loading Finvoy-Trip Bus Pass</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Loading Finvoy-Gobal Bus Pass</h2>
           <p className="text-gray-600 mb-8">Getting the best travel deals for you...</p>
           
           {/* Progress Bar */}

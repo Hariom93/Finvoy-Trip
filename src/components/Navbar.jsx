@@ -4,10 +4,9 @@ import { FaHome, FaSuitcase, FaTag, FaUserCircle, FaBriefcase } from "react-icon
 export default function Navbar() {
   const menuItems = [
     { path: "/", label: "Home", icon: FaHome },
-    { path: "/account/mytrips", label: "My Trips", icon: FaSuitcase },
     { path: "/offers", label: "Offers", icon: FaTag },
-    { path: "/account", label: "Account", icon: FaUserCircle },
-    { path: "/work", label: "Work", icon: FaBriefcase },
+    { path: "/contact", label: "Contact Us", icon: FaUserCircle },
+    { path: "/about", label: "About Us", icon: FaBriefcase },
   ];
 
   return (
