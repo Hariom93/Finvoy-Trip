@@ -28,6 +28,14 @@ import HotelsDetails from '../pages/Bookings/HotelsDetails.jsx'
 import Taxi from '../pages/Bookings/Taxi.jsx'
 import TaxiDetails from '../pages/Bookings/TaxiDetails.jsx'
 import Login from "../pages/Auth/Login.jsx";
+import HotelForm from "../components/hotel-enquiry-form/hotel-form.jsx";
+import FlightForm from "../components/hotel-enquiry-form/flight-form.jsx";
+// import Dehlii from "../PopularDestinationss/Dehlii.jsx";
+// import Dubai from "../PopularDestinationss/Dubai.jsx";
+// import Singapore from "../PopularDestinationss/Singapore.jsx";
+// import Goa from "../PopularDestinationss/Goa.jsx";
+// import Mumbai from "../PopularDestinationss/Mumbai.jsx";
+// import Bangalore from "../PopularDestinationss/Banglore.jsx";
 import ComingSoon from "../pages/Account/comming.jsx";
 import AboutUs from "../pages/Work";
 
@@ -72,6 +80,8 @@ const Allroutes = () => {
           <Route path="/hongkong" element={<HongKongPage />} />
           <Route path="/saudi" element={<SaudiPage />} />
           <Route path="/western-america" element={<WesternAmericaPage />} />
+          <Route path="/hotel-form" element={<HotelForm />} />
+          <Route path="/flight-form" element={<FlightForm />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>

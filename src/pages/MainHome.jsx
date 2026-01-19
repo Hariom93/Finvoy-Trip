@@ -358,14 +358,14 @@ export default function MainHome() {
   ];
 
   const travelBoxes = [
-    { img: Img1, name: "Flights", text: "Up to 25% off", link: "/flight" },
-    { img: Img2, name: "Holidays", text: "Plan your trip", link: "/holidays" },
-    { img: Img3, name: "Taxi Booking", text: "Plan your trip", link: "/taxi" },
+    { img: Img1, name: "Flights", text: "Up to 25% off",link: "/flight-form"},
+    { img: Img2, name: "Holidays", text: "Plan your trip", link: "/flight-form" },
+    { img: Img3, name: "Taxi Booking", text: "Plan your trip",link: "/flight-form"},
     {
       img: Img4,
       name: "Hotels Booking",
       text: "Plan your trip",
-      link: "/hotal",
+      link: "/hotel-form",
     },
   ];
 
